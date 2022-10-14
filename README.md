@@ -1,6 +1,6 @@
-# hello_world
+# Lafyuu_e-commerce_app
 
-A new Flutter project created with https://flutlab.io
+Lafyuu_e-commerce_app project created with https://flutlab.io
 
 ## Getting Started
 
