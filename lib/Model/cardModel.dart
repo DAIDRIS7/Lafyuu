@@ -4,7 +4,7 @@ class CardModel {
   double price;
   double? oldPrice;
   double discount;
-  var rating;
+  double? rating;
 
   CardModel(
       {required this.urlImage,

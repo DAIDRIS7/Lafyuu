@@ -11,7 +11,7 @@ class ProductRepository {
           price: value["price"],
           title: value["title"],
           urlImage: value["thumbnail"],
-          rating: value["rating"],
+          rating: value["rating"].toDouble(),
         ),
       ),
     );
