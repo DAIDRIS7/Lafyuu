@@ -80,9 +80,9 @@ class _RegistrationState extends State<Registration> {
                         if (value!.isNotEmpty && value.length > 2) {
                           return null;
                         } else if (value.length < 3 && value.isNotEmpty) {
-                          return 'No way your name is that short';
+                          return 'ppassword must be big than 8';
                         } else {
-                          return 'Please give us your name already';
+                          return 'Please enter  your papassword';
                         }
                       },
                       decoration: const InputDecoration(
@@ -104,9 +104,9 @@ class _RegistrationState extends State<Registration> {
                         if (value!.isNotEmpty && value.length > 2) {
                           return null;
                         } else if (value.length < 3 && value.isNotEmpty) {
-                          return 'No way your name is that short';
+                          return 'password must be big than 8';
                         } else {
-                          return 'Please give us your name already';
+                          return 'Please enter your password';
                         }
                       },
                       decoration: const InputDecoration(
@@ -204,7 +204,7 @@ class _RegistrationState extends State<Registration> {
     );
   }
 
-  void signn() async {
+  signn() async {
     try {
       final response =
           await Dio().post("https://api.escuelajs.co/api/v1/users/", data: {
@@ -215,8 +215,10 @@ class _RegistrationState extends State<Registration> {
       });
       _completeRegistrion();
     } on DioError catch (e) {
-      print(
-        "This is an error:${e.response}",
+      return Scaffold(
+        body: Center(
+          child: Text("This is an error:${e.response}"),
+        ),
       );
     }
   }

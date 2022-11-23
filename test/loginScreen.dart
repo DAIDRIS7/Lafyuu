@@ -10,26 +10,26 @@ class Login extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-            SizedBox(height: 60),
+            const SizedBox(height: 60),
             Container(
               height: 50,
               width: 50,
               color: Colors.blue,
             ),
-            SizedBox(height: 10),
-            Text(
+            const SizedBox(height: 10),
+            const Text(
               "Welcome to Lafyuu",
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 30,
               ),
             ),
-            SizedBox(height: 10),
-            Text("Sign in to continue "),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
+            const Text("Sign in to continue "),
+            const SizedBox(height: 10),
             Container(
-              margin: EdgeInsets.all(10),
+              margin: const EdgeInsets.all(10),
               child: TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: ("Your Email "),
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(
@@ -40,10 +40,10 @@ class Login extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.all(12),
+              margin: const EdgeInsets.all(12),
               child: TextFormField(
                 obscureText: true,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: ("Your Password "),
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(
@@ -55,45 +55,45 @@ class Login extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.all(12),
+              margin: const EdgeInsets.all(12),
               width: MediaQuery.of(context).size.width,
               child: ElevatedButton(
                 onPressed: () {},
-                child: Text("Sign in "),
+                child: const Text("Sign in "),
               ),
             ),
             Row(children: <Widget>[
-              Expanded(child: Divider()),
-              Text("OR"),
-              Expanded(child: Divider()),
+              const Expanded(child: Divider()),
+              const Text("OR"),
+              const Expanded(child: const Divider()),
             ]),
             Container(
-              margin: EdgeInsets.all(12),
+              margin: const EdgeInsets.all(12),
               width: MediaQuery.of(context).size.width,
               child: OutlinedButton.icon(
                 onPressed: () {},
-                icon: Icon(Icons.add),
-                label: Text("Log in with Google "),
+                icon: const Icon(Icons.add),
+                label: const Text("Log in with Google "),
               ),
             ),
             Container(
-              margin: EdgeInsets.all(12),
+              margin: const EdgeInsets.all(12),
               width: MediaQuery.of(context).size.width,
               child: OutlinedButton.icon(
                 onPressed: () {},
-                icon: Icon(Icons.face),
-                label: Text("Log in with Facebook "),
+                icon: const Icon(Icons.face),
+                label: const Text("Log in with Facebook "),
               ),
             ),
             TextButton(
               onPressed: () {},
-              child: Text("Forget Password?"),
+              child: const Text("Forget Password?"),
             ),
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Text("Do you have an account?"),
+              const Text("Do you have an account?"),
               TextButton(
                 onPressed: () {},
-                child: Text("Register "),
+                child: const Text("Register "),
               ),
             ]),
           ]),

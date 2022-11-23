@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Account extends StatefulWidget {
@@ -13,34 +12,33 @@ class _AccountState extends State<Account> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      
       body: SafeArea(
         child: Column(
           children: [
             Row(
               children: [
-                Text(
+                const Text(
                   "Account",
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.w700,
                   ),
                 ),
               ],
             ),
-            Divider(),
+            const Divider(),
             Container(
               width: MediaQuery.of(context).size.width,
               child: TextButton(
                   onPressed: () {},
                   child: Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.person,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 9,
                       ),
-                      Text(
+                      const Text(
                         "Profile",
                       ),
                     ],
@@ -52,13 +50,13 @@ class _AccountState extends State<Account> {
                 onPressed: () {},
                 child: Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.shopping_bag,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 9,
                     ),
-                    Text(
+                    const Text(
                       "Order ",
                     ),
                   ],
@@ -71,13 +69,13 @@ class _AccountState extends State<Account> {
                 onPressed: () {},
                 child: Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.location_on,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 9,
                     ),
-                    Text(
+                    const Text(
                       "Address",
                     ),
                   ],
@@ -90,13 +88,13 @@ class _AccountState extends State<Account> {
                 onPressed: () {},
                 child: Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.credit_card,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 9,
                     ),
-                    Text(
+                    const Text(
                       "Payment ",
                     ),
                   ],

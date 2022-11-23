@@ -2,12 +2,15 @@ class CardModel {
   String urlImage;
   String title;
   double price;
-  double oldPrice;
-  String discount;
+  double? oldPrice;
+  double discount;
+  var rating;
+
   CardModel(
       {required this.urlImage,
       required this.title,
       required this.price,
-      required this.oldPrice,
-      required this.discount});
+      this.oldPrice,
+      required this.discount,
+      this.rating});
 }

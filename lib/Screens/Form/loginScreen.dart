@@ -6,7 +6,8 @@ import 'package:lafyuu/Screens/homeScreen.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
-var access;
+// ignore: prefer_typing_uninitialized_variables
+Object? access;
 
 class Login extends StatefulWidget {
   @override

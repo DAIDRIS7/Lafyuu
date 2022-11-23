@@ -10,7 +10,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  var myaccess = access;
+  Object? myaccess = access;
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
