@@ -13,7 +13,7 @@ class ItemCard extends StatefulWidget {
 
   //ItemCard({Key? key, required this.myItems}) : super(key: key);
   @override
-  State<ItemCard> createState() => _ItemCardState(myItems);
+  State<ItemCard> createState() => _ItemCardState();
 }
 
 class _ItemCardState extends State<ItemCard> {
@@ -83,7 +83,7 @@ class _ItemCardState extends State<ItemCard> {
                           height: 5,
                         ),
                         Text(
-                          myItem[index].title,
+                          myItem[index].urlImage,
                         ),
                         const SizedBox(
                           height: 6,

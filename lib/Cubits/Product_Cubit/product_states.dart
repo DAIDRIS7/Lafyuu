@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:lafyuu/Repository/product_repository.dart';
 
 abstract class ProductState {}

@@ -8,7 +8,8 @@ class ProductCubit extends Cubit<ProductState> {
   ProductCubit() : super(LoddingState());
 
   void getAllProduct() async {
-    final listOfProduct = await ProductRepository().getAllProduct();
+    final listOfProduct = await ProductRepository()
+      ..getAllProduct();
     // emit(SuccessState(listOfProduct));
   }
 }
