@@ -7,9 +7,9 @@ import 'package:lafyuu/Repository/product_repository.dart';
 class ProductCubit extends Cubit<ProductState> {
   ProductCubit() : super(LoddingState());
 
-  void getAllProduct() async {
-    final listOfProduct = await ProductRepository()
-      ..getAllProduct();
+  getAllProduct() async {
+    final listOfProduct = await ProductRepository().getAllProduct();
     // emit(SuccessState(listOfProduct));
+    emit(SuccessState(listOfProduct));
   }
 }

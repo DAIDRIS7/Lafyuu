@@ -83,7 +83,7 @@ class _ItemCardState extends State<ItemCard> {
                           height: 5,
                         ),
                         Text(
-                          myItem[index].urlImage,
+                          myItem[index].title,
                         ),
                         const SizedBox(
                           height: 6,

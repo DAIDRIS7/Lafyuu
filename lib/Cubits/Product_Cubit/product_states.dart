@@ -1,3 +1,4 @@
+import 'package:lafyuu/Model/cardModel.dart';
 import 'package:lafyuu/Repository/product_repository.dart';
 
 abstract class ProductState {}
@@ -5,7 +6,7 @@ abstract class ProductState {}
 class LoddingState extends ProductState {}
 
 class SuccessState extends ProductState {
-  List<ProductRepository> list;
+  List<CardModel> list;
   SuccessState(this.list);
 }
 
