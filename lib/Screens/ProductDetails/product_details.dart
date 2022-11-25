@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:lafyuu/Model/cardModel.dart';
+import 'package:lafyuu/Screens/ProductDetails/carousel_details.dart';
 
-import 'package:lafyuu/Thems/carousel_details.dart';
-import 'package:lafyuu/Thems/product.dart';
 import 'package:lafyuu/Thems/app_colors.dart';
 import 'package:lafyuu/Thems/card.dart';
-import 'package:lafyuu/Thems/cardModel.dart';
+
 import 'package:lafyuu/Thems/rating_bar.dart';
 
 class ProductDetails extends StatefulWidget {
@@ -14,29 +14,29 @@ class ProductDetails extends StatefulWidget {
 }
 
 class _ProductDetailsState extends State<ProductDetails> {
-  List listOfCard = [
-    CardModel(
-      urlImage: 'assets/images/Picture03.png',
-      title: 'FS - QUILTED MAXI CROS...',
-      price: 299.43,
-      discount: '%25 off ',
-      oldPrice: 536.43,
-    ),
-    CardModel(
-      urlImage: 'assets/images/Womenbag.png',
-      title: 'FS - Nike Air Max 270 React...',
-      price: 299.43,
-      oldPrice: 536.43,
-      discount: '%25 off ',
-    ),
-    CardModel(
-      urlImage: 'assets/images/Womenbag1.png',
-      title: 'FS - Nike Air Max 270 React...',
-      price: 299.43,
-      oldPrice: 536.43,
-      discount: '%25 off ',
-    ),
-  ];
+  // List listOfCard = [
+  //  CardModel(
+  // urlImage: 'assets/images/Picture03.png',
+  //  title: 'FS - QUILTED MAXI CROS...',
+  //  price: 299.43,
+  //   discount: '%25 off ',
+  // oldPrice: 536.43,
+  // ),
+  //  CardModel(
+  //   urlImage: 'assets/images/Womenbag.png',
+  //   title: 'FS - Nike Air Max 270 React...',
+  //_    price: 299.43,
+  //   oldPrice: 536.43,
+  //    discount: '%25 off ',
+  //  ),
+  // CardModel(
+  //  urlImage: 'assets/images/Womenbag1.png',
+  //  title: 'FS - Nike Air Max 270 React...',
+  //  price: 299.43,
+  // oldPrice: 536.43,
+  //  discount: '%25 off ',
+  //  ),
+  //];
   List listofcolor = [
     Appcolors().myBlue,
     Appcolors().myRed,
