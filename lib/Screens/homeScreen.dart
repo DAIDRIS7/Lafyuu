@@ -7,6 +7,7 @@ import 'package:lafyuu/Cubits/Product_Cubit/product_cubit.dart';
 import 'package:lafyuu/Cubits/Product_Cubit/product_states.dart';
 
 import 'package:lafyuu/Screens/Notification/notification.dart';
+import 'package:lafyuu/Thems/card.dart';
 
 import 'package:lafyuu/Thems/carousel.dart';
 import 'package:lafyuu/Model/categoryModel.dart';
@@ -223,223 +224,217 @@ class _HomepageState extends State<Homepage> {
                   const SizedBox(
                     height: 10,
                   ),
-                  BlocBuilder<ProductCubit, ProductState>(
-                    builder: (BuildContext context, state) {
-                      if (state is SuccessState) {
-                        final listOfProducts = state.list;
-                        print(listOfProducts);
-                        return Container(
-                          margin: const EdgeInsets.only(left: 16),
-                          height: 238,
-                          color: Colors.blue,
 
-                          //   child: ListView(
-                          //  scrollDirection: Axis.horizontal,
-                          //   children: [
-                          //    GestureDetector(
-                          // Within the `FirstRoute` widget
-                          // onTap: () {
-                          //  Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //     builder: (context) => ProductDetails(),
-                          //   ),
-                          //    );
-                          //   },
-                          //   child: Container(
-                          //   margin: const EdgeInsets.all(10),
-                          //   decoration: BoxDecoration(
-                          //    border: Border.all(
-                          //       color:
-                          //         const Color.fromARGB(255, 215, 221, 237)),
-                          //   borderRadius: BorderRadius.circular(15),
-                          //  ),
-                          //  child: Column(children: [
-                          //     Image.asset(
-                          //      'assets/images/image1.png',
-                          //        height: 100,
-                          //         width: 100,
-                          //          ),
-                          //          const Text(
-                          //        """FS - Nike Air
+                  Container(
+                    margin: const EdgeInsets.only(left: 16),
+                    height: 238,
+                    color: Colors.blue,
+                    child: ItemCard(),
+
+                    //   child: ListView(
+                    //  scrollDirection: Axis.horizontal,
+                    //   children: [
+                    //    GestureDetector(
+                    // Within the `FirstRoute` widget
+                    // onTap: () {
+                    //  Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) => ProductDetails(),
+                    //   ),
+                    //    );
+                    //   },
+                    //   child: Container(
+                    //   margin: const EdgeInsets.all(10),
+                    //   decoration: BoxDecoration(
+                    //    border: Border.all(
+                    //       color:
+                    //         const Color.fromARGB(255, 215, 221, 237)),
+                    //   borderRadius: BorderRadius.circular(15),
+                    //  ),
+                    //  child: Column(children: [
+                    //     Image.asset(
+                    //      'assets/images/image1.png',
+                    //        height: 100,
+                    //         width: 100,
+                    //          ),
+                    //          const Text(
+                    //        """FS - Nike Air
 //Max 270 React...""",
-                          //     style: const TextStyle(
-                          //          fontWeight: FontWeight.bold,
-                          //       fontSize: 12,
-                          //       ),
-                          //     ),
-                          //    const SizedBox(
-                          //     height: 8,
-                          //    ),
-                          //   Container(
-                          //       margin: const EdgeInsets.only(left: 16),
-                          //     child: Row(children: const [
-                          //     Text(
-                          //       "299,43",
-                          //       style: TextStyle(
-                          //         color: Colors.blueAccent,
-                          //          fontWeight: FontWeight.bold,
-                          //          fontSize: 12,
-                          //          ),
-                          //        ),
-                          //        SizedBox(
-                          //         width: 73,
-                          //        )
-                          //     ]),
-                          //    ),
-                          //    const SizedBox(
-                          //   height: 8,
-                          //   ),
-                          //   Row(children: const [
-                          //   Text(
-                          //    "534,33",
-                          //  style: TextStyle(
-                          //    decoration: TextDecoration.lineThrough,
-                          //     color: Colors.grey),
-                          //    ),
-                          //    SizedBox(
-                          //      width: 8,
-                          //      ),
-                          //       Text(
-                          //          "24% Off",
-                          //          style: TextStyle(color: Colors.red),
-                          //        ),
-                          //        ]),
-                          //         ]),
-                          //       ),
-                          //      ),
-                          //        Container(
-                          //          margin: const EdgeInsets.all(10),
-                          //          decoration: BoxDecoration(
-                          //               border: Border.all(
-                          //                  color: const Color.fromARGB(255, 215, 221, 237)),
-                          //              borderRadius: BorderRadius.circular(15),
-                          //            ),
-                          //           child: Column(children: [
-                          //             Container(
-                          //               child: Image.asset('assets/images/image1.png',
-                          //                  height: 100, width: 100),
-                          //             ),
-                          //                const Text(
-                          //                    """FS - Nike Air
+                    //     style: const TextStyle(
+                    //          fontWeight: FontWeight.bold,
+                    //       fontSize: 12,
+                    //       ),
+                    //     ),
+                    //    const SizedBox(
+                    //     height: 8,
+                    //    ),
+                    //   Container(
+                    //       margin: const EdgeInsets.only(left: 16),
+                    //     child: Row(children: const [
+                    //     Text(
+                    //       "299,43",
+                    //       style: TextStyle(
+                    //         color: Colors.blueAccent,
+                    //          fontWeight: FontWeight.bold,
+                    //          fontSize: 12,
+                    //          ),
+                    //        ),
+                    //        SizedBox(
+                    //         width: 73,
+                    //        )
+                    //     ]),
+                    //    ),
+                    //    const SizedBox(
+                    //   height: 8,
+                    //   ),
+                    //   Row(children: const [
+                    //   Text(
+                    //    "534,33",
+                    //  style: TextStyle(
+                    //    decoration: TextDecoration.lineThrough,
+                    //     color: Colors.grey),
+                    //    ),
+                    //    SizedBox(
+                    //      width: 8,
+                    //      ),
+                    //       Text(
+                    //          "24% Off",
+                    //          style: TextStyle(color: Colors.red),
+                    //        ),
+                    //        ]),
+                    //         ]),
+                    //       ),
+                    //      ),
+                    //        Container(
+                    //          margin: const EdgeInsets.all(10),
+                    //          decoration: BoxDecoration(
+                    //               border: Border.all(
+                    //                  color: const Color.fromARGB(255, 215, 221, 237)),
+                    //              borderRadius: BorderRadius.circular(15),
+                    //            ),
+                    //           child: Column(children: [
+                    //             Container(
+                    //               child: Image.asset('assets/images/image1.png',
+                    //                  height: 100, width: 100),
+                    //             ),
+                    //                const Text(
+                    //                    """FS - Nike Air
 //Max 270 React...""",
-                          //       style: TextStyle(
-                          //         fontWeight: FontWeight.bold,
-                          //        fontSize: 12,
-                          //      ),
-                          //      ),
-                          //     const SizedBox(
-                          //       height: 8,
-                          //     ),
-                          //    Container(
-                          //     margin: const EdgeInsets.only(left: 16),
-                          //     child: Row(children: const [
-                          //      Text(
-                          //       "299,43",
-                          //       style: TextStyle(
-                          //          color: Colors.blue,
-                          //          fontWeight: FontWeight.bold,
-                          //            fontSize: 12,
-                          //           ),
-                          //         ),
-                          //        SizedBox(
-                          //          width: 73,
-                          //         )
-                          //      ]),
-                          //    ),
-                          //     const SizedBox(
-                          //      height: 8,
-                          //   ),
-                          //  Row(
-                          //     children: const [
-                          //       Text(
-                          //        "534,33",
-                          //         style: TextStyle(
-                          //            decoration: TextDecoration.lineThrough,
-                          //             color: Colors.grey),
-                          //       ),
-                          //       SizedBox(
-                          //          width: 8,
-                          //        ),
-                          //        Text(
-                          //           "24% Off",
-                          //           style: TextStyle(color: Colors.red),
-                          //          ),
-                          //        ],
-                          //      ),
-                          //     ]),
-                          //  ),
-                          //   Container(
-                          //     margin: const EdgeInsets.all(10),
-                          //    decoration: BoxDecoration(
-                          //     border: Border.all(
-                          //         color: const Color.fromARGB(225, 215, 221, 237)),
-                          //     borderRadius: BorderRadius.circular(15),
-                          //   ),
-                          //   child: Column(children: [
-                          //       Container(
-                          //         margin: const EdgeInsets.only(left: 16),
-                          //        child: Image.asset(
-                          //         'assets/images/Woman Bag.png',
-                          //        height: 100,
-                          //        width: 100,
-                          //        )),
-                          //          const Text(
-                          //              """FS - Nike Air
+                    //       style: TextStyle(
+                    //         fontWeight: FontWeight.bold,
+                    //        fontSize: 12,
+                    //      ),
+                    //      ),
+                    //     const SizedBox(
+                    //       height: 8,
+                    //     ),
+                    //    Container(
+                    //     margin: const EdgeInsets.only(left: 16),
+                    //     child: Row(children: const [
+                    //      Text(
+                    //       "299,43",
+                    //       style: TextStyle(
+                    //          color: Colors.blue,
+                    //          fontWeight: FontWeight.bold,
+                    //            fontSize: 12,
+                    //           ),
+                    //         ),
+                    //        SizedBox(
+                    //          width: 73,
+                    //         )
+                    //      ]),
+                    //    ),
+                    //     const SizedBox(
+                    //      height: 8,
+                    //   ),
+                    //  Row(
+                    //     children: const [
+                    //       Text(
+                    //        "534,33",
+                    //         style: TextStyle(
+                    //            decoration: TextDecoration.lineThrough,
+                    //             color: Colors.grey),
+                    //       ),
+                    //       SizedBox(
+                    //          width: 8,
+                    //        ),
+                    //        Text(
+                    //           "24% Off",
+                    //           style: TextStyle(color: Colors.red),
+                    //          ),
+                    //        ],
+                    //      ),
+                    //     ]),
+                    //  ),
+                    //   Container(
+                    //     margin: const EdgeInsets.all(10),
+                    //    decoration: BoxDecoration(
+                    //     border: Border.all(
+                    //         color: const Color.fromARGB(225, 215, 221, 237)),
+                    //     borderRadius: BorderRadius.circular(15),
+                    //   ),
+                    //   child: Column(children: [
+                    //       Container(
+                    //         margin: const EdgeInsets.only(left: 16),
+                    //        child: Image.asset(
+                    //         'assets/images/Woman Bag.png',
+                    //        height: 100,
+                    //        width: 100,
+                    //        )),
+                    //          const Text(
+                    //              """FS - Nike Air
 //Max 270 React...""",
-                          //     style: const TextStyle(
-                          //     fontWeight: FontWeight.bold,
-                          //     fontSize: 12,
-                          //    ),
-                          //   ),
-                          //   const SizedBox(
-                          //     height: 8,
-                          //    ),
-                          //  Container(
-                          //  margin: const EdgeInsets.only(left: 16),
-                          //  child: Row(children: const [
-                          //    Text(
-                          //     "299,43",
-                          //    style: TextStyle(
-                          //      color: Colors.blue,
-                          //      fontWeight: FontWeight.bold,
-                          //       fontSize: 12,
-                          //      ),
-                          //    ),
-                          //    SizedBox(
-                          //     width: 73,
-                          //     )
-                          //   ]),
-                          //   ),
-                          //  const SizedBox(
-                          //     height: 8,
-                          //  ),
-                          //   Row(
-                          //   children: const [
-                          //   Text(
-                          //    "534,33",
-                          //   style: TextStyle(
-                          //      decoration: TextDecoration.lineThrough,
-                          //      color: Colors.grey),
-                          //   ),
-                          //  SizedBox(
-                          //    width: 8,
-                          //   ),
-                          //     Text(
-                          //       "24% Off",
-                          //      style: TextStyle(color: Colors.red),
-                          //      ),
-                          //   ],
-                          //    ),
-                          //  ]),
-                          //    ),
-                          //    ],
-                          //   ),
-                        );
-                      }
-                      return CircularProgressIndicator();
-                    },
+                    //     style: const TextStyle(
+                    //     fontWeight: FontWeight.bold,
+                    //     fontSize: 12,
+                    //    ),
+                    //   ),
+                    //   const SizedBox(
+                    //     height: 8,
+                    //    ),
+                    //  Container(
+                    //  margin: const EdgeInsets.only(left: 16),
+                    //  child: Row(children: const [
+                    //    Text(
+                    //     "299,43",
+                    //    style: TextStyle(
+                    //      color: Colors.blue,
+                    //      fontWeight: FontWeight.bold,
+                    //       fontSize: 12,
+                    //      ),
+                    //    ),
+                    //    SizedBox(
+                    //     width: 73,
+                    //     )
+                    //   ]),
+                    //   ),
+                    //  const SizedBox(
+                    //     height: 8,
+                    //  ),
+                    //   Row(
+                    //   children: const [
+                    //   Text(
+                    //    "534,33",
+                    //   style: TextStyle(
+                    //      decoration: TextDecoration.lineThrough,
+                    //      color: Colors.grey),
+                    //   ),
+                    //  SizedBox(
+                    //    width: 8,
+                    //   ),
+                    //     Text(
+                    //       "24% Off",
+                    //      style: TextStyle(color: Colors.red),
+                    //      ),
+                    //   ],
+                    //    ),
+                    //  ]),
+                    //    ),
+                    //    ],
+                    //   ),
                   ),
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

@@ -9,6 +9,7 @@ class ProductRepository {
         (value) => CardModel(
           discount: value["discountPercentage"],
           price: value["price"],
+          oldPrice: value["price"],
           title: value["title"],
           urlImage: value["thumbnail"],
           rating: value["rating"].toDouble(),

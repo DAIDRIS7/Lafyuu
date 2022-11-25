@@ -405,7 +405,7 @@ class _ProductDetailsState extends State<ProductDetails> {
             Container(
               height: 250,
               width: MediaQuery.of(context).size.width,
-              child: ItemCard(listOfCard),
+              child: ItemCard(),
             ),
             ElevatedButton(
               onPressed: () {},
