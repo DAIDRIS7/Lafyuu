@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lafyuu/Cubits/Product_Cubit/product_cubit.dart';
 import 'package:lafyuu/Cubits/Product_Cubit/product_states.dart';
-import 'package:lafyuu/Model/cardModel.dart';
+
 import 'package:lafyuu/Screens/ProductDetails/product_details.dart';
 
 class ItemCard extends StatefulWidget {
@@ -67,7 +67,7 @@ class _ItemCardState extends State<ItemCard> {
                           decoration: BoxDecoration(
                             image: DecorationImage(
                               fit: BoxFit.cover,
-                              image: AssetImage(
+                              image: NetworkImage(
                                 myItem[index].urlImage,
                               ),
                             ),

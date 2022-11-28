@@ -61,7 +61,7 @@ class _ItemCardState extends State<ItemCardG> {
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             fit: BoxFit.cover,
-                            image: AssetImage(
+                            image: NetworkImage(
                               myItem[index].urlImage,
                             ),
                           ),
