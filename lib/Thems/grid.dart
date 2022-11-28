@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lafyuu/Cubits/Product_Cubit/product_cubit.dart';
 import 'package:lafyuu/Cubits/Product_Cubit/product_states.dart';
 import 'package:lafyuu/Screens/ProductDetails/product_details.dart';
-
 import 'package:lafyuu/Thems/rating_bar.dart';
 
 class ItemCardG extends StatefulWidget {
@@ -19,7 +18,7 @@ class _ItemCardState extends State<ItemCardG> {
     // TODO: implement build
     return BlocProvider(
       create: (context) => ProductCubit()..getAllProduct(),
-      child: BlocBuilder(builder: (context, state) {
+      child: BlocBuilder<ProductCubit, ProductState>(builder: (context, state) {
         if (state is SuccessState) {
           List myItem = state.list;
           return GestureDetector(
@@ -129,3 +128,4 @@ class _ItemCardState extends State<ItemCardG> {
     );
   }
 }
+

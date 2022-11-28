@@ -7,7 +7,7 @@ import 'package:lafyuu/Cubits/Product_Cubit/product_cubit.dart';
 
 import 'package:lafyuu/Screens/Notification/notification.dart';
 import 'package:lafyuu/Thems/card.dart';
-
+import 'package:lafyuu/Thems/grid.dart';
 import 'package:lafyuu/Thems/carousel.dart';
 import 'package:lafyuu/Model/categoryModel.dart';
 import 'package:http/http.dart' as http;
@@ -443,6 +443,13 @@ class _HomepageState extends State<Homepage> {
                     const SizedBox(
                       height: 10,
                     ),
+                    Container(
+                      margin: EdgeInsets.only(
+                        left: 16,
+                      ),
+                      height: 238,
+                      child: ItemCard(),
+                    ),
 
                     Stack(children: [
                       Container(
@@ -475,6 +482,7 @@ Product""",
                     const SizedBox(
                       height: 10,
                     ),
+                    ItemCardG(),
                   ]),
             ),
           ),
