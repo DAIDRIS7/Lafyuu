@@ -482,7 +482,6 @@ Product""",
                     const SizedBox(
                       height: 10,
                     ),
-                    ItemCardG(),
                   ]),
             ),
           ),
