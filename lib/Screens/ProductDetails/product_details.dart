@@ -8,6 +8,8 @@ import 'package:lafyuu/Thems/card.dart';
 import 'package:lafyuu/Thems/rating_bar.dart';
 
 class ProductDetails extends StatefulWidget {
+  const ProductDetails({Key? key}) : super(key: key);
+
   // List mycolor = [];
   @override
   State<ProductDetails> createState() => _ProductDetailsState();
