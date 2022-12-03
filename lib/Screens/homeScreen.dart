@@ -4,39 +4,16 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lafyuu/Cubits/Product_Cubit/product_cubit.dart';
+import 'package:lafyuu/Repository/category_repository.dart';
 
 import 'package:lafyuu/Screens/Notification/notification.dart';
 import 'package:lafyuu/Thems/card.dart';
 import 'package:lafyuu/Thems/grid.dart';
 import 'package:lafyuu/Thems/carousel.dart';
 import 'package:lafyuu/Model/categoryModel.dart';
-import 'package:http/http.dart' as http;
 
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-Future<List<CategoryModel>> fetchCategory() async {
-  final response = await http.get(
-    Uri.parse(
-      "https://api.escuelajs.co/api/v1/categories/",
-    ),
-  );
-
-  if (response.statusCode == 200) {
-    // If the server did return a 200 OK response,
-    // then parse the JSON.
-
-    final list = jsonDecode(response.body);
-    return List<CategoryModel>.from(list.map((e) {
-      return CategoryModel.fromjson(e);
-    }));
-  } else {
-    // If the server did not return a 200 OK response,
-    // then throw an exception.
-    throw Exception('Failed to load Category');
-  }
-}
-
-////////////////
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
 

@@ -6,6 +6,8 @@ import 'package:lafyuu/Screens/ProductDetails/product_details.dart';
 import 'package:lafyuu/Thems/rating_bar.dart';
 
 class ItemCardG extends StatefulWidget {
+  const ItemCardG({Key? key}) : super(key: key);
+
   @override
   State<ItemCardG> createState() => _ItemCardGState();
 
@@ -128,4 +130,3 @@ class _ItemCardState extends State<ItemCardG> {
     );
   }
 }
-

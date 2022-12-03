@@ -7,6 +7,7 @@ class CategoryModel {
     required this.urlImage,
     required this.title,
   });
+
   factory CategoryModel.fromjson(Map<String, dynamic> json) {
     return CategoryModel(
       urlImage: json["image"],
