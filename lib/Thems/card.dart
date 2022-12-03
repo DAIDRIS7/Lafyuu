@@ -5,18 +5,7 @@ import 'package:lafyuu/Cubits/Product_Cubit/product_states.dart';
 
 import 'package:lafyuu/Screens/ProductDetails/product_details.dart';
 
-class ItemCard extends StatefulWidget {
-  //const ItemCard({Key? key}) : super(key: key);
-  //List cardProduct;
-  //List myItems;
-  //ItemCard(this.myItems);
-
-  //ItemCard({Key? key, required this.myItems}) : super(key: key);
-  @override
-  State<ItemCard> createState() => _ItemCardState();
-}
-
-class _ItemCardState extends State<ItemCard> {
+class ItemCard extends StatelessWidget {
   // List myItem;
   // _ItemCardState(this.myItem);
   @override
@@ -28,18 +17,22 @@ class _ItemCardState extends State<ItemCard> {
         builder: (context, state) {
           if (state is SuccessState) {
             final myItem = state.list;
-            return GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ProductDetails()),
-                );
-              },
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: myItem.length,
-                itemBuilder: (context, index) {
-                  return Container(
+            return ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: myItem.length,
+              itemBuilder: (context, index) {
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ProductDetails(
+                          productName: myItem[index].title,
+                        ),
+                      ),
+                    );
+                  },
+                  child: Container(
                     height: 238,
                     width: 141,
                     margin: const EdgeInsets.only(
@@ -119,9 +112,9 @@ class _ItemCardState extends State<ItemCard> {
                         ),
                       ],
                     ),
-                  );
-                },
-              ),
+                  ),
+                );
+              },
             );
           }
           return CircularProgressIndicator();

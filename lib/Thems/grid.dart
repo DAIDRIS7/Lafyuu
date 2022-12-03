@@ -5,16 +5,7 @@ import 'package:lafyuu/Cubits/Product_Cubit/product_states.dart';
 import 'package:lafyuu/Screens/ProductDetails/product_details.dart';
 import 'package:lafyuu/Thems/rating_bar.dart';
 
-class ItemCardG extends StatefulWidget {
-  const ItemCardG({Key? key}) : super(key: key);
-
-  @override
-  State<ItemCardG> createState() => _ItemCardGState();
-
-  _ItemCardGState() {}
-}
-
-class _ItemCardState extends State<ItemCardG> {
+class ItemCardG extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -23,18 +14,22 @@ class _ItemCardState extends State<ItemCardG> {
       child: BlocBuilder<ProductCubit, ProductState>(builder: (context, state) {
         if (state is SuccessState) {
           List myItem = state.list;
-          return GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ProductDetails()),
-              );
-            },
-            child: GridView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: myItem.length,
-              itemBuilder: (context, index) {
-                return Container(
+          return GridView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: myItem.length,
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProductDetails(
+                        productName: myItem[index].title,
+                      ),
+                    ),
+                  );
+                },
+                child: Container(
                   height: 238,
                   width: 141,
                   margin: const EdgeInsets.only(
@@ -115,13 +110,13 @@ class _ItemCardState extends State<ItemCardG> {
                       ),
                     ],
                   ),
-                );
-              },
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-                crossAxisCount: 2,
-              ),
+                ),
+              );
+            },
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              crossAxisCount: 2,
             ),
           );
         }

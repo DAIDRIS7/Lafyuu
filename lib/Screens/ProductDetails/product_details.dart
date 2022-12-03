@@ -7,15 +7,8 @@ import 'package:lafyuu/Thems/card.dart';
 
 import 'package:lafyuu/Thems/rating_bar.dart';
 
-class ProductDetails extends StatefulWidget {
-  const ProductDetails({Key? key}) : super(key: key);
-
-  // List mycolor = [];
-  @override
-  State<ProductDetails> createState() => _ProductDetailsState();
-}
-
-class _ProductDetailsState extends State<ProductDetails> {
+class ProductDetails extends StatelessWidget {
+  final productName;
   // List listOfCard = [
   //  CardModel(
   // urlImage: 'assets/images/Picture03.png',
@@ -48,6 +41,8 @@ class _ProductDetailsState extends State<ProductDetails> {
     Appcolors().myYellow,
   ];
   List listOfSize = [6, 6.5, 7, 7.5, 8, 8.5, 9];
+
+  ProductDetails({Key? key, required this.productName}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,9 +65,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                 //  SizedBox(
                 //    width: 10,
                 // ),
-                const Text(
-                  "Nike Air Max 270 Rea...",
-                ),
+                Text(" $productName"),
                 // SizedBox(
                 //  width: 10,
                 // ),
