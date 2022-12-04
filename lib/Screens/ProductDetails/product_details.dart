@@ -9,7 +9,11 @@ import 'package:lafyuu/Thems/rating_bar.dart';
 
 class ProductDetails extends StatelessWidget {
   final productName;
-  // List listOfCard = [
+  final productDescription;
+  final productPrice;
+  final productImages;
+  final productBrand;
+  // List listOfCard
   //  CardModel(
   // urlImage: 'assets/images/Picture03.png',
   //  title: 'FS - QUILTED MAXI CROS...',
@@ -31,7 +35,7 @@ class ProductDetails extends StatelessWidget {
   // oldPrice: 536.43,
   //  discount: '%25 off ',
   //  ),
-  //];
+  // async ;
   List listofcolor = [
     Appcolors().myBlue,
     Appcolors().myRed,
@@ -42,7 +46,14 @@ class ProductDetails extends StatelessWidget {
   ];
   List listOfSize = [6, 6.5, 7, 7.5, 8, 8.5, 9];
 
-  ProductDetails({Key? key, required this.productName}) : super(key: key);
+  ProductDetails(
+      {Key? key,
+      required this.productName,
+      required this.productDescription,
+      required this.productPrice,
+      required this.productImages,
+      required this.productBrand})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,13 +97,7 @@ class ProductDetails extends StatelessWidget {
             ),
             const SizedBox(height: 15),
             CarouselDetails(
-              imgList: [
-                'assets/images/image1.png',
-                'assets/images/image2.png',
-                'assets/images/image3.png',
-                'assets/images/image4.png',
-                'assets/images/image5.png',
-              ],
+              imgList: productImages,
             ),
 
             Column(
@@ -102,9 +107,8 @@ class ProductDetails extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
-                      """Nike Air Zoom Pegasus 36
-         Miami""",
+                    Text(
+                      """$productName""",
                     ),
                     const Icon(
                       Icons.favorite_border,
@@ -127,8 +131,8 @@ class ProductDetails extends StatelessWidget {
 //price
                 Row(
                   children: [
-                    const Text(
-                      "\$230",
+                    Text(
+                      " $productPrice",
                       style: TextStyle(
                         color: Colors.blueAccent,
                         fontWeight: FontWeight.bold,
@@ -233,13 +237,13 @@ class ProductDetails extends StatelessWidget {
                 const Text(
                   "Shown:",
                 ),
-                const Text(
+                Text(
                   """
 
 
-                                  Laser
-               Blue/Anthracite/Watermel
-               on/White""",
+                                  $productDescription
+              
+           """,
                 ),
               ],
             ),
@@ -252,20 +256,18 @@ class ProductDetails extends StatelessWidget {
                 const Text(
                   "style:",
                 ),
-                const Text(
-                  "  CD0113-400",
+                Text(
+                  "  $productBrand ",
                 ),
               ],
             ),
             const SizedBox(
               height: 12,
             ),
-            const Text(
+            Text(
               """
-    The Nike Air Max 270 React ENG combines a 
-    full-length React foam midsole with a 270 Max Air
-    unit for unrivaled comfort and a striking visual
-    experience.
+    
+    $productDescription  
             """,
             ),
             Row(

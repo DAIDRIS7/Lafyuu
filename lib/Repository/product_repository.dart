@@ -14,6 +14,11 @@ class ProductRepository {
           title: value["title"],
           urlImage: value["thumbnail"],
           rating: value["rating"].toDouble(),
+          stock: value["stock"],
+          brand: value["brand"],
+          category: value["category"],
+          description: value["description"],
+          images: List<String>.from(value["images"].map((x) => x)),
         ),
       ),
     );
