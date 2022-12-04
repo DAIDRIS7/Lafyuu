@@ -27,7 +27,11 @@ class ItemCard extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) => ProductDetails(
-                          productName: myItem[index].title, 
+                          productPrice: myItem[index].price,
+                          productName: myItem[index].title,
+                          productDescription: myItem[index].description,
+                          productBrand: myItem[index].brand,
+                          productImages: myItem[index].images,
                         ),
                       ),
                     );
