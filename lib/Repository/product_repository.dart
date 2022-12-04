@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:lafyuu/Model/cardModel.dart';
+import 'dart:convert';
 
 class ProductRepository {
   Future<List<CardModel>> getAllProduct() async {
@@ -29,8 +30,8 @@ class Products {
   Products({
     required this.products,
     required this.total,
- required  this.skip,
-  required  this.limit,
+    required this.skip,
+    required this.limit,
   });
 
   List<Product> products;
@@ -56,17 +57,17 @@ class Products {
 
 class Product {
   Product({
-required    this.id,
- required  this.title,
-required    this.description,
- required  this.price,
-required    this.discountPercentage,
-required    this.rating,
-required    this.stock,
-required    this.brand,
-required    this.category,
-required    this.thumbnail,
-required    this.images,
+    required this.id,
+    required this.title,
+    required this.description,
+    required this.price,
+    required this.discountPercentage,
+    required this.rating,
+    required this.stock,
+    required this.brand,
+    required this.category,
+    required this.thumbnail,
+    required this.images,
   });
 
   int id;
