@@ -23,7 +23,7 @@ class _CarouselDetailsState extends State<CarouselDetails> {
                 ),
                 child: Stack(
                   children: [
-                    Image.asset(
+                    Image.network(
                       item,
                       fit: BoxFit.cover,
                       width: 1000,

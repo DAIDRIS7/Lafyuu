@@ -241,7 +241,7 @@ class ProductDetails extends StatelessWidget {
                   """
 
 
-                                  $productDescription
+                                  $productBrand 
               
            """,
                 ),
