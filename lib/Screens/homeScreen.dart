@@ -7,6 +7,7 @@ import 'package:lafyuu/Cubits/Product_Cubit/product_cubit.dart';
 import 'package:lafyuu/Repository/category_repository.dart';
 
 import 'package:lafyuu/Screens/Notification/notification.dart';
+import 'package:lafyuu/Screens/categories/productsByCategory.dart';
 import 'package:lafyuu/Thems/card.dart';
 import 'package:lafyuu/Thems/grid.dart';
 import 'package:lafyuu/Thems/carousel.dart';
@@ -136,50 +137,60 @@ class _HomepageState extends State<Homepage> {
                               );
                             }
                             if (snapshot.hasData) {
-                              return ListView.builder(
-                                  itemCount: snapshot.data!.length,
-                                  scrollDirection: Axis.horizontal,
-                                  itemBuilder: (context, index) {
-                                    return Container(
-                                      margin: const EdgeInsets.symmetric(
-                                        horizontal: 30,
-                                      ),
-                                      child: Column(
-                                        children: [
-                                          CircleAvatar(
-                                            radius: 31,
-                                            child: CircleAvatar(
-                                              radius: 30,
-                                              backgroundColor: Colors.white,
-                                              child: Image.network(
-                                                snapshot.data![index].urlImage,
-                                                width: 50,
-                                                height: 50,
-                                                color: Colors.redAccent,
+                              return GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (contex) =>
+                                              ProductsByCategory()));
+                                },
+                                child: ListView.builder(
+                                    itemCount: snapshot.data!.length,
+                                    scrollDirection: Axis.horizontal,
+                                    itemBuilder: (context, index) {
+                                      return Container(
+                                        margin: const EdgeInsets.symmetric(
+                                          horizontal: 30,
+                                        ),
+                                        child: Column(
+                                          children: [
+                                            CircleAvatar(
+                                              radius: 31,
+                                              child: CircleAvatar(
+                                                radius: 30,
+                                                backgroundColor: Colors.white,
+                                                child: Image.network(
+                                                  snapshot
+                                                      .data![index].urlImage,
+                                                  width: 50,
+                                                  height: 50,
+                                                  color: Colors.redAccent,
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                          Text(
-                                            snapshot.data![index].title,
-                                          ),
-                                        ],
-                                      ),
-                                    );
+                                            Text(
+                                              snapshot.data![index].title,
+                                            ),
+                                          ],
+                                        ),
+                                      );
 
-                                    // GestureDetector(
-                                    //    onTap: () {},
-                                    //     child: Image.asset('assets/images/ManShirt.png')),
-                                    //  const SizedBox(width: 10),
-                                    //    Image.asset('assets/images/ManShirt.png'),
-                                    //  const SizedBox(width: 10),
-                                    //  Image.asset('assets/images/ManShirt.png'),
-                                    //  const SizedBox(
-                                    //  width: 10,
-                                    //  ),
-                                    // Image.asset('assets/images/ManShirt.png'),
-                                    //  const SizedBox(width: 10),
-                                    //  Image.asset('assets/images/ManShirt.png'),
-                                  });
+                                      // GestureDetector(
+                                      //    onTap: () {},
+                                      //     child: Image.asset('assets/images/ManShirt.png')),
+                                      //  const SizedBox(width: 10),
+                                      //    Image.asset('assets/images/ManShirt.png'),
+                                      //  const SizedBox(width: 10),
+                                      //  Image.asset('assets/images/ManShirt.png'),
+                                      //  const SizedBox(
+                                      //  width: 10,
+                                      //  ),
+                                      // Image.asset('assets/images/ManShirt.png'),
+                                      //  const SizedBox(width: 10),
+                                      //  Image.asset('assets/images/ManShirt.png'),
+                                    }),
+                              );
                             }
                             return const CircularProgressIndicator();
                           }),

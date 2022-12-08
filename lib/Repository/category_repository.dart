@@ -6,7 +6,7 @@ import 'package:lafyuu/Model/categoryModel.dart';
 Future<List<CategoryModel>> fetchCategory() async {
   final response = await http.get(
     Uri.parse(
-      "https://api.escuelajs.co/api/v1/categories/",
+      "https://mocki.io/v1/e5775744-06ba-4306-b6f6-93055de3c2d5",
     ),
   );
 
