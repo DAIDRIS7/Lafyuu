@@ -143,7 +143,8 @@ class _HomepageState extends State<Homepage> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (contex) =>
-                                              ProductsByCategory()));
+                                              ProductsByCategory(
+                                                  myItem: snapshot.data)));
                                 },
                                 child: ListView.builder(
                                     itemCount: snapshot.data!.length,
