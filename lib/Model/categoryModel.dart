@@ -19,18 +19,18 @@ class CategoryModel {
   }
 }
 
-ProductsByCategory productsByCategoryFromJson(String str) =>
-    ProductsByCategory.fromJson(json.decode(str));
+ProductsByCategoryModel productsByCategoryModelFromJson(String str) =>
+    ProductsByCategoryModel.fromJson(json.decode(str));
 
-String productsByCategoryToJson(ProductsByCategory data) =>
+String productsByCategoryModelToJson(ProductsByCategoryModel data) =>
     json.encode(data.toJson());
 
-class ProductsByCategory {
-  ProductsByCategory({
-   required this.products,
-   required this.total,
-   required this.skip,
-  required  this.limit,
+class ProductsByCategoryModel {
+  ProductsByCategoryModel({
+    required this.products,
+    required this.total,
+    required this.skip,
+    required this.limit,
   });
 
   List<Product> products;
@@ -57,17 +57,17 @@ class ProductsByCategory {
 
 class Product {
   Product({
- required  this.id,
- required  this.title,
-  required  this.description,
- required  this.price,
-   required this.discountPercentage,
-  required  this.rating,
- required  this.stock,
-  required  this.brand,
- required  this.category,
- required  this.thumbnail,
- required  this.images,
+    required this.id,
+    required this.title,
+    required this.description,
+    required this.price,
+    required this.discountPercentage,
+    required this.rating,
+    required this.stock,
+    required this.brand,
+    required this.category,
+    required this.thumbnail,
+    required this.images,
   });
 
   int id;
