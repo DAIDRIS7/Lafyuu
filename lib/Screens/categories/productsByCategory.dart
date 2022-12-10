@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lafyuu/Thems/rating_bar.dart';
 
 class ProductsByCategory extends StatelessWidget {
-  final myItem;
-
-  const ProductsByCategory({Key? key, this.myItem}) : super(key: key);
+  final categoryName;
+  const ProductsByCategory({Key? key, this.categoryName}) : super(key: key);
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -12,7 +12,7 @@ class ProductsByCategory extends StatelessWidget {
           Icons.arrow_back_ios,
         ),
         title: Text(
-          "Product Category ",
+          "$categoryName  Category ",
         ),
       ),
       body: BlocBuilder(builder: (context, state) {
@@ -123,7 +123,5 @@ class ProductsByCategory extends StatelessWidget {
         );
       }),
     );
-  }
-}
   }
 }

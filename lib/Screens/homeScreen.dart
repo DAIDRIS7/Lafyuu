@@ -137,20 +137,23 @@ class _HomepageState extends State<Homepage> {
                               );
                             }
                             if (snapshot.hasData) {
-                              return GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (contex) =>
-                                              ProductsByCategory(
-                                                  myItem: snapshot.data)));
-                                },
-                                child: ListView.builder(
-                                    itemCount: snapshot.data!.length,
-                                    scrollDirection: Axis.horizontal,
-                                    itemBuilder: (context, index) {
-                                      return Container(
+                              return ListView.builder(
+                                  itemCount: snapshot.data!.length,
+                                  scrollDirection: Axis.horizontal,
+                                  itemBuilder: (context, index) {
+                                    return GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  ProductsByCategory(
+                                                categoryName:
+                                                    snapshot.data![index].title,
+                                              ),
+                                            ));
+                                      },
+                                      child: Container(
                                         margin: const EdgeInsets.symmetric(
                                           horizontal: 30,
                                         ),
@@ -175,23 +178,23 @@ class _HomepageState extends State<Homepage> {
                                             ),
                                           ],
                                         ),
-                                      );
+                                      ),
+                                    );
 
-                                      // GestureDetector(
-                                      //    onTap: () {},
-                                      //     child: Image.asset('assets/images/ManShirt.png')),
-                                      //  const SizedBox(width: 10),
-                                      //    Image.asset('assets/images/ManShirt.png'),
-                                      //  const SizedBox(width: 10),
-                                      //  Image.asset('assets/images/ManShirt.png'),
-                                      //  const SizedBox(
-                                      //  width: 10,
-                                      //  ),
-                                      // Image.asset('assets/images/ManShirt.png'),
-                                      //  const SizedBox(width: 10),
-                                      //  Image.asset('assets/images/ManShirt.png'),
-                                    }),
-                              );
+                                    // GestureDetector(
+                                    //    onTap: () {},
+                                    //     child: Image.asset('assets/images/ManShirt.png')),
+                                    //  const SizedBox(width: 10),
+                                    //    Image.asset('assets/images/ManShirt.png'),
+                                    //  const SizedBox(width: 10),
+                                    //  Image.asset('assets/images/ManShirt.png'),
+                                    //  const SizedBox(
+                                    //  width: 10,
+                                    //  ),
+                                    // Image.asset('assets/images/ManShirt.png'),
+                                    //  const SizedBox(width: 10),
+                                    //  Image.asset('assets/images/ManShirt.png'),
+                                  });
                             }
                             return const CircularProgressIndicator();
                           }),

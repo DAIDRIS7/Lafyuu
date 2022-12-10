@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:dio/dio.dart';
 import 'package:http/http.dart' as http;
 import 'package:lafyuu/Model/categoryModel.dart';
 
@@ -26,3 +27,8 @@ Future<List<CategoryModel>> fetchCategory() async {
 }
 
 ////////////////
+void getProductsByCategory() async {
+  final response = await Dio().get(
+    "https://dummyjson.com/products/category/groceries",
+  );
+}
