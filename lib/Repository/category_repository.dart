@@ -27,11 +27,10 @@ Future<List<CategoryModel>> fetchCategory() async {
 }
 
 ////////////////
- getProductsByCategory() async {
+getProductsByCategory() async {
   final response = await Dio().get(
     "https://dummyjson.com/products/category/groceries",
   );
-listOfProductsByCategory= Product.fromJson(response.data);
-return  listOfProductByCategory;
-    
+  final listOfProductsByCategory = Product.fromJson(response.data);
+  return listOfProductsByCategory;
 }
