@@ -15,111 +15,115 @@ class ProductsByCategory extends StatelessWidget {
           "Product Category ",
         ),
       ),
-      body: GridView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: myItem.length,
-        itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () {
-              //  Navigator.push(
-              //context,
-              //    MaterialPageRoute(
-              //    builder: (context) => ProductDetails(
-              //          productName: myItem[index].title,
-              //             ),
-              //        ),
-              //           );
-            },
-            child: Container(
-              height: 238,
-              width: 141,
-              margin: const EdgeInsets.only(
-                left: 16,
-              ),
-              padding: const EdgeInsets.all(
-                16,
-              ),
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: const Color(
-                    0xffEBF0FF,
-                  ),
+      body: BlocBuilder(builder: (context, state) {
+        return GridView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: myItem.length,
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              onTap: () {
+                //  Navigator.push(
+                //context,
+                //    MaterialPageRoute(
+                //    builder: (context) => ProductDetails(
+                //          productName: myItem[index].title,
+                //             ),
+                //        ),
+                //           );
+              },
+              child: Container(
+                height: 238,
+                width: 141,
+                margin: const EdgeInsets.only(
+                  left: 16,
                 ),
-                borderRadius: BorderRadius.circular(
-                  5,
+                padding: const EdgeInsets.all(
+                  16,
                 ),
-              ),
-              child: Column(
-                children: [
-                  Container(
-                    height: 109,
-                    width: 109,
-                    margin: const EdgeInsets.only(),
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: NetworkImage(
-                          myItem[index].urlImage,
-                        ),
-                      ),
-                      border: Border.all(
-                        color: Colors.grey,
-                      ),
-                      borderRadius: BorderRadius.circular(
-                        5,
-                      ),
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: const Color(
+                      0xffEBF0FF,
                     ),
                   ),
-                  const SizedBox(
-                    height: 5,
+                  borderRadius: BorderRadius.circular(
+                    5,
                   ),
-                  Text(
-                    myItem[index].title,
-                  ),
-                  const SizedBox(
-                    height: 6,
-                  ),
-                  Rating(),
-                  Row(
-                    children: [
-                      Text(
-                        """${myItem[index].price}""",
-                        style: TextStyle(
-                          color: Colors.blueAccent,
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      height: 109,
+                      width: 109,
+                      margin: const EdgeInsets.only(),
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: NetworkImage(
+                            myItem[index].urlImage,
+                          ),
+                        ),
+                        border: Border.all(
+                          color: Colors.grey,
+                        ),
+                        borderRadius: BorderRadius.circular(
+                          5,
                         ),
                       ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        "${myItem[index].oldPrice}",
-                        style: TextStyle(
-                          decoration: TextDecoration.lineThrough,
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      myItem[index].title,
+                    ),
+                    const SizedBox(
+                      height: 6,
+                    ),
+                    Rating(),
+                    Row(
+                      children: [
+                        Text(
+                          """${myItem[index].price}""",
+                          style: TextStyle(
+                            color: Colors.blueAccent,
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Text(
-                        "${myItem[index].discount}",
-                        style: TextStyle(
-                          color: Colors.redAccent,
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          "${myItem[index].oldPrice}",
+                          style: TextStyle(
+                            decoration: TextDecoration.lineThrough,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                          "${myItem[index].discount}",
+                          style: TextStyle(
+                            color: Colors.redAccent,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-          );
-        },
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-          crossAxisCount: 2,
-        ),
-      ),
+            );
+          },
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+            crossAxisCount: 2,
+          ),
+        );
+      }),
     );
+  }
+}
   }
 }
