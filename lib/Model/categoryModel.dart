@@ -27,10 +27,10 @@ String productsByCategoryToJson(ProductsByCategory data) =>
 
 class ProductsByCategory {
   ProductsByCategory({
-    this.products,
-    this.total,
-    this.skip,
-    this.limit,
+   required this.products,
+   required this.total,
+   required this.skip,
+  required  this.limit,
   });
 
   List<Product> products;
@@ -57,17 +57,17 @@ class ProductsByCategory {
 
 class Product {
   Product({
-    this.id,
-    this.title,
-    this.description,
-    this.price,
-    this.discountPercentage,
-    this.rating,
-    this.stock,
-    this.brand,
-    this.category,
-    this.thumbnail,
-    this.images,
+ required  this.id,
+ required  this.title,
+  required  this.description,
+ required  this.price,
+   required this.discountPercentage,
+  required  this.rating,
+ required  this.stock,
+  required  this.brand,
+ required  this.category,
+ required  this.thumbnail,
+ required  this.images,
   });
 
   int id;

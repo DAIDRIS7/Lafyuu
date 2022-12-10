@@ -13,29 +13,7 @@ class ProductDetails extends StatelessWidget {
   final productPrice;
   final productImages;
   final productBrand;
-  // List listOfCard
-  //  CardModel(
-  // urlImage: 'assets/images/Picture03.png',
-  //  title: 'FS - QUILTED MAXI CROS...',
-  //  price: 299.43,
-  //   discount: '%25 off ',
-  // oldPrice: 536.43,
-  // ),
-  //  CardModel(
-  //   urlImage: 'assets/images/Womenbag.png',
-  //   title: 'FS - Nike Air Max 270 React...',
-  //_    price: 299.43,
-  //   oldPrice: 536.43,
-  //    discount: '%25 off ',
-  //  ),
-  // CardModel(
-  //  urlImage: 'assets/images/Womenbag1.png',
-  //  title: 'FS - Nike Air Max 270 React...',
-  //  price: 299.43,
-  // oldPrice: 536.43,
-  //  discount: '%25 off ',
-  //  ),
-  // async ;
+  
   List listofcolor = [
     Appcolors().myBlue,
     Appcolors().myRed,
@@ -385,20 +363,7 @@ class ProductDetails extends StatelessWidget {
               ],
             ),
 
-            //  Row(
-            //   children: [
-            //   ListView.builder(
-            //  shrinkWrap: false,
-            //  scrollDirection: Axis.horizontal,
-            //  itemCount: 1,
-            // itemBuilder: (context, index) {
-            //  return
-            //
-            //   ItemCard(),
-            // },
-            //),
-            //   ],
-            //  ),
+            
             Container(
               height: 250,
               width: MediaQuery.of(context).size.width,
