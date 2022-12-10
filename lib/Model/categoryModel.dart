@@ -38,8 +38,8 @@ class ProductsByCategoryModel {
   int skip;
   int limit;
 
-  factory ProductsByCategory.fromJson(Map<String, dynamic> json) =>
-      ProductsByCategory(
+  factory ProductsByCategoryModel.fromJson(Map<String, dynamic> json) =>
+      ProductsByCategoryModel(
         products: List<Product>.from(
             json["products"].map((x) => Product.fromJson(x))),
         total: json["total"],
