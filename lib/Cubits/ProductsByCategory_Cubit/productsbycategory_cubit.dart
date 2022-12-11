@@ -3,7 +3,7 @@ import 'package:lafyuu/Cubits/ProductsByCategory_Cubit/productsbycategory_states
 import 'package:lafyuu/Model/categoryModel.dart';
 
 class ProductsByCategoryCubit extends Cubit<ProductsByCategoryState> {
-  ProductsByCategoryCubit(LoddingState) : super(LoddingState);
+  ProductsByCategoryCubit() : super(LoddingState());
   getProductsByCategory() async {
     final List<Product> listOfProductsByCategory =
         await getProductsByCategory();
