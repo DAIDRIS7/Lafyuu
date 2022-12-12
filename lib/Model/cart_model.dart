@@ -11,13 +11,13 @@ String cartModelToJson(CartModel data) => json.encode(data.toJson());
 
 class CartModel {
   CartModel({
-    @required this.id,
-    @required this.products,
-    @required this.total,
-    @required this.discountedTotal,
-    @required this.userId,
-    @required this.totalProducts,
-    @required this.totalQuantity,
+    required this.id,
+    required this.products,
+    required this.total,
+    required this.discountedTotal,
+    required this.userId,
+    required this.totalProducts,
+    required this.totalQuantity,
   });
 
   int id;
@@ -52,13 +52,13 @@ class CartModel {
 
 class Product {
   Product({
-    @required this.id,
-    @required this.title,
-    @required this.price,
-    @required this.quantity,
-    @required this.total,
-    @required this.discountPercentage,
-    @required this.discountedPrice,
+    required this.id,
+    required this.title,
+    required this.price,
+    required this.quantity,
+    required this.total,
+    required this.discountPercentage,
+    required this.discountedPrice,
   });
 
   int id;

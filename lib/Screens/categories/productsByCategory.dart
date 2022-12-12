@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lafyuu/Cubits/ProductsByCategory_Cubit/productsbycategory_cubit.dart';
 import 'package:lafyuu/Cubits/ProductsByCategory_Cubit/productsbycategory_states.dart';
+import 'package:lafyuu/Model/categoryModel.dart';
 import 'package:lafyuu/Thems/rating_bar.dart';
 
 class ProductsByCategory extends StatelessWidget {
@@ -23,7 +24,7 @@ class ProductsByCategory extends StatelessWidget {
         child: BlocBuilder<ProductsByCategoryCubit, ProductsByCategoryState>(
             builder: (context, state) {
           if (state is SuccessState) {
-            var myItem = state.list;
+            final myItem = state.list;
             return GridView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: myItem.length,
