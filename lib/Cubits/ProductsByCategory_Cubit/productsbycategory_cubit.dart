@@ -6,7 +6,6 @@ class ProductsByCategoryCubit extends Cubit<ProductsByCategoryState> {
   ProductsByCategoryCubit() : super(LoddingState());
   getProductsByCategory() async {
     final List<Product> listOfProductsByCategory =
-        await getProductsByCategory();
-    emit(SuccessState(listOfProductsByCategory));
+        await emit(SuccessState(listOfProductsByCategory));
   }
 }
