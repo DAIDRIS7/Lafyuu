@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:http/http.dart' as http;
 import 'package:lafyuu/Model/categoryModel.dart';
 
-class CategoreRepository {
+class CategoryRepository {
   Future<List<CategoryModel>> fetchCategory() async {
     final response = await http.get(
       Uri.parse(

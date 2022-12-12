@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,7 +7,6 @@ import 'package:lafyuu/Repository/category_repository.dart';
 import 'package:lafyuu/Screens/Notification/notification.dart';
 import 'package:lafyuu/Screens/categories/productsByCategory.dart';
 import 'package:lafyuu/Thems/card.dart';
-import 'package:lafyuu/Thems/grid.dart';
 import 'package:lafyuu/Thems/carousel.dart';
 import 'package:lafyuu/Model/categoryModel.dart';
 
@@ -46,10 +43,9 @@ class _HomepageState extends State<Homepage> {
   }
 
   int activeIndex = 0;
-  
+
   @override
   Widget build(BuildContext context) {
- 
     if (isconnected == false) {
       return Container(
         child: Center(
@@ -84,8 +80,6 @@ class _HomepageState extends State<Homepage> {
                         const SizedBox(width: 14),
                         GestureDetector(
                           onTap: () {
-                            
-
                             Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -99,7 +93,6 @@ class _HomepageState extends State<Homepage> {
                     ),
                     const SizedBox(height: 10),
                     CarouselModel(),
- 
                     Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -123,7 +116,7 @@ class _HomepageState extends State<Homepage> {
                       height: 80,
                       //color: Colors.black,
                       child: FutureBuilder<List<CategoryModel>>(
-                          future: fetchCategory(),
+                          future: CategoryRepository().fetchCategory(),
                           builder: (BuildContext context, snapshot) {
                             if (snapshot.hasError) {
                               return Center(
@@ -174,8 +167,6 @@ class _HomepageState extends State<Homepage> {
                                         ),
                                       ),
                                     );
-
-                                    
                                   });
                             }
                             return const CircularProgressIndicator();
@@ -195,21 +186,12 @@ class _HomepageState extends State<Homepage> {
                     const SizedBox(
                       height: 10,
                     ),
-
                     Container(
                       margin: const EdgeInsets.only(left: 16),
                       height: 238,
                       //  color: Colors.blue,
                       child: ItemCard(),
-
-                
-                      
-                      
-                    
-                      
-                      
                     ),
-
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -228,7 +210,6 @@ class _HomepageState extends State<Homepage> {
                       height: 238,
                       child: ItemCard(),
                     ),
-
                     Stack(children: [
                       Container(
                         color: Colors.blue,
@@ -256,7 +237,6 @@ Product""",
                             ),
                           )),
                     ]),
-
                     const SizedBox(
                       height: 10,
                     ),

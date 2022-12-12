@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lafyuu/Cubits/ProductsByCategory_Cubit/productsbycategory_cubit.dart';
 import 'package:lafyuu/Cubits/ProductsByCategory_Cubit/productsbycategory_states.dart';
-import 'package:lafyuu/Model/categoryModel.dart';
 import 'package:lafyuu/Thems/rating_bar.dart';
 
 class ProductsByCategory extends StatelessWidget {
