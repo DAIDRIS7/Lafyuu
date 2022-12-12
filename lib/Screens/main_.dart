@@ -16,7 +16,7 @@ class _MainHomeState extends State<MainHome> {
   List<Widget> listOfScreens = [
     Homepage(),
     Search(),
-    Cart(),
+    CartScreen(),
     Offers(),
     Account(),
   ];

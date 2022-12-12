@@ -6,7 +6,7 @@ import 'package:lafyuu/Thems/card_in_cart.dart';
 void main() {
   runApp(
     MaterialApp(
-      home: CardInCartModel(),
+      home: MainHome(),
     ),
   );
 }
