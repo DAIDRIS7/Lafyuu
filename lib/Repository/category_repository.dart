@@ -32,5 +32,7 @@ getProductsByCategory() async {
     "https://dummyjson.com/products/category/groceries",
   );
   final listOfProductsByCategory = Product.fromJson(response.data);
+  print(listOfProductsByCategory);
   return listOfProductsByCategory;
 }
+
