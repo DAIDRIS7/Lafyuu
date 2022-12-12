@@ -24,7 +24,7 @@ class ProductsByCategory extends StatelessWidget {
       ),
       body: BlocProvider(
         create: (BuildContext context) =>
-            ProductsByCategoryCubit()..getProductsByCategory(),
+            ProductsByCategoryCubit()..getProductsByCategory(categoryName),
         child: BlocBuilder<ProductsByCategoryCubit, ProductsByCategoryState>(
             builder: (context, state) {
           if (state is SuccessState) {
@@ -130,6 +130,7 @@ class ProductsByCategory extends StatelessWidget {
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
                 crossAxisCount: 2,
+                childAspectRatio: 0.7,
               ),
             );
           }

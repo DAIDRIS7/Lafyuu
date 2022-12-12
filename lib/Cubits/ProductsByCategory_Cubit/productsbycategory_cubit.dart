@@ -5,9 +5,9 @@ import 'package:lafyuu/Repository/category_repository.dart';
 
 class ProductsByCategoryCubit extends Cubit<ProductsByCategoryState> {
   ProductsByCategoryCubit() : super(LoddingState());
-  getProductsByCategory() async {
+  getProductsByCategory(categoryName) async {
     final List<Product> listOfProductsByCategory =
-        await CategoryRepository().getProductsByCategory();
+        await CategoryRepository().getProductsByCategory(categoryName);
     emit(SuccessState(listOfProductsByCategory));
   }
 }

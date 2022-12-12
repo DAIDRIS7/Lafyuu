@@ -28,9 +28,9 @@ class CategoryRepository {
   }
 
 ////////////////
-  getProductsByCategory() async {
+  getProductsByCategory(categoryName) async {
     final response = await Dio().get(
-      "https://dummyjson.com/products/category/groceries",
+      "https://dummyjson.com/products/category/categoryName",
     );
     final listOfProductsByCategory = ProductsByCategoryModel.fromJson(
       response.data,
