@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
-class Cart extends StatefulWidget {
-  @override
-  State<Cart> createState() => _CartState();
-}
-
-class _CartState extends State<Cart> {
+class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Your Cart",
+        ),
+      ),
+    );
   }
 }
