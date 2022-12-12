@@ -6,7 +6,8 @@ import 'package:lafyuu/Repository/category_repository.dart';
 class CategoryCubit extends Cubit<CategoryState> {
   CategoryCubit(CategoryState CategoryInitial) : super(CategoryInitial);
   getAllCategories() async {
-    final List<CategoryModel> listOfCategory = await fetchCategory();
+    final List<CategoryModel> listOfCategory =
+        await CategoryRepository().fetchCategory();
     emit(CategorySuccess(listOfCategory));
   }
 }

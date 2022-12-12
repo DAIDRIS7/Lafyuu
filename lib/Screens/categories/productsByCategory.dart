@@ -30,7 +30,7 @@ class ProductsByCategory extends StatelessWidget {
           if (state is SuccessState) {
             final myItem = state.list;
             return GridView.builder(
-              scrollDirection: Axis.horizontal,
+              scrollDirection: Axis.vertical,
               itemCount: myItem.length,
               itemBuilder: (context, index) {
                 return GestureDetector(

@@ -14,7 +14,8 @@ class ItemCardG extends StatelessWidget {
       child: BlocBuilder<ProductCubit, ProductState>(
         builder: (context, state) {
           if (state is SuccessState) {
-            List myItem = state.list;
+            final myItem = state.list;
+
             return GridView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: myItem.length,
@@ -79,12 +80,12 @@ class ItemCardG extends StatelessWidget {
                         const SizedBox(
                           height: 6,
                         ),
-                        Rating(),
+                        const Rating(),
                         Row(
                           children: [
                             Text(
                               """${myItem[index].price}""",
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Colors.blueAccent,
                               ),
                             ),
@@ -94,16 +95,16 @@ class ItemCardG extends StatelessWidget {
                           children: [
                             Text(
                               "${myItem[index].oldPrice}",
-                              style: TextStyle(
+                              style: const TextStyle(
                                 decoration: TextDecoration.lineThrough,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 5,
                             ),
                             Text(
                               "${myItem[index].discount}",
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Colors.redAccent,
                               ),
                             ),
@@ -114,14 +115,14 @@ class ItemCardG extends StatelessWidget {
                   ),
                 );
               },
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
                 crossAxisCount: 2,
               ),
             );
           }
-          return CircularProgressIndicator();
+          return const Center(child: const CircularProgressIndicator());
         },
       ),
     );
