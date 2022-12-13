@@ -3,35 +3,50 @@ import 'package:lafyuu/Thems/app_colors.dart';
 
 class CardInCartModel extends StatelessWidget {
   Widget build(BuildContext context) {
-    return 
-       Container(
-        height: 104,
-        width: 343,
-        decoration: BoxDecoration(
-          border: Border.all(color: Color.fromARGB(255, 215, 221, 237)),
-          borderRadius: BorderRadius.circular(
-            10,
-          ),
+    return Container(
+      height: 104,
+      width: 343,
+      decoration: BoxDecoration(
+        border: Border.all(color: Color.fromARGB(255, 215, 221, 237)),
+        borderRadius: BorderRadius.circular(
+          10,
         ),
-        child: Row(children: [
-          Image.asset(
+      ),
+      child: Row(//scrollDirection: Axis.horizontal,
+          //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+        Container(
+          width: 72,
+          color: Colors.red,
+          child: Image.asset(
             "assets/images/image1.png",
-            width: 75,
-            height: 75,
+            width: 72,
+            height: 72,
             fit: BoxFit.cover,
           ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        ),
+        SizedBox(
+          width: 15,
+        ),
+        Container(
+          width: 250,
+          // width: MediaQuery.of(context).size.width,
+
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             //crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                // mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text(
-                    "title",
-                    style: TextStyle(
-                        //  height: 56,
-                        ),
+                  Container(
+                    width: 158,
+                    child: Text(
+                      "title",
+                      style: TextStyle(
+                          //  height: 56,
+                          ),
+                    ),
                   ),
                   SizedBox(
                     width: 10,
@@ -44,10 +59,11 @@ class CardInCartModel extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                width: 10,
+                height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     "\$230",
@@ -59,8 +75,8 @@ class CardInCartModel extends StatelessWidget {
                     width: 104,
                     height: 24,
                     decoration: BoxDecoration(
-                      border: Border.all(
-                          color: Color.fromARGB(255, 215, 221, 237)),
+                      border:
+                          Border.all(color: Color.fromARGB(255, 215, 221, 237)),
                       borderRadius: BorderRadius.circular(
                         10,
                       ),
@@ -68,14 +84,14 @@ class CardInCartModel extends StatelessWidget {
                     child: Row(
                       children: [
                         Container(
-                          width: 32,
+                          width: 31,
                         ),
                         Container(
                           width: 40,
                           color: Colors.deepPurpleAccent,
                         ),
                         Container(
-                          width: 32,
+                          width: 31,
                         ),
                       ],
                     ),
@@ -84,8 +100,8 @@ class CardInCartModel extends StatelessWidget {
               ),
             ],
           ),
-        ]),
-      ),
+        ),
+      ]),
     );
   }
 }

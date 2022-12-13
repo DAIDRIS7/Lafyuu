@@ -18,6 +18,9 @@ class CartScreen extends StatelessWidget {
         child: Column(
           children: [
             CardInCartModel(),
+            SizedBox(
+              height: 15,
+            ),
             _cuponField(),
           ],
         ),
