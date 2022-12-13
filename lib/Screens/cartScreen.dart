@@ -22,6 +22,7 @@ class CartScreen extends StatelessWidget {
               height: 15,
             ),
             _cuponField(),
+            _totalPrice(),
           ],
         ),
       ),
@@ -36,13 +37,26 @@ _cuponField() {
     child: TextFormField(
       decoration: InputDecoration(
         border: OutlineInputBorder(),
-        hintText: 'package',
+        hintText: 'Enter Cupon Code ',
         suffixIcon: RaisedButton(
           onPressed: () {},
           child: Text(
             "Apply",
           ),
         ),
+      ),
+    ),
+  );
+}
+
+_totalPrice() {
+  return Container(
+    width: 343,
+    height: 164,
+    decoration: BoxDecoration(
+      border: Border.all(color: Color.fromARGB(255, 215, 221, 237)),
+      borderRadius: BorderRadius.circular(
+        10,
       ),
     ),
   );

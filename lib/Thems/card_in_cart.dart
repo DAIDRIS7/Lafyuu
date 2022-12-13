@@ -26,10 +26,10 @@ class CardInCartModel extends StatelessWidget {
           ),
         ),
         SizedBox(
-          width: 15,
+          width: 7,
         ),
         Container(
-          width: 250,
+          width: 262,
           // width: MediaQuery.of(context).size.width,
 
           child: Column(
@@ -40,12 +40,13 @@ class CardInCartModel extends StatelessWidget {
                 // mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
-                    width: 158,
+                    width: 168,
                     child: Text(
                       "title",
                       style: TextStyle(
-                          //  height: 56,
-                          ),
+                        fontWeight: FontWeight.w700, fontSize: 12,
+                        //  height: 56,
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -57,9 +58,6 @@ class CardInCartModel extends StatelessWidget {
                   ),
                   Icon(Icons.delete),
                 ],
-              ),
-              SizedBox(
-                height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -88,7 +86,7 @@ class CardInCartModel extends StatelessWidget {
                         ),
                         Container(
                           width: 40,
-                          color: Colors.deepPurpleAccent,
+                          color: Appcolors().myGrey,
                         ),
                         Container(
                           width: 31,
