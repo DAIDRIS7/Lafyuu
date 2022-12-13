@@ -1,11 +1,12 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:lafyuu/Thems/card_in_cart.dart';
 
 class CartScreen extends StatelessWidget {
+  const CartScreen({Key? key}) : super(key: key);
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(context) {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
@@ -17,7 +18,7 @@ class CartScreen extends StatelessWidget {
         child: Column(
           children: [
             CardInCartModel(),
-            _cuponField(context),
+            _cuponField(),
           ],
         ),
       ),
@@ -25,9 +26,10 @@ class CartScreen extends StatelessWidget {
   }
 }
 
-Widget _cuponField(context) {
+_cuponField() {
   return Container(
-    width: MediaQuery.of(context).size.width,
+    height: 43,
+    //  width: MediaQuery.of(context).size.width,
     child: TextFormField(
       decoration: InputDecoration(
         border: OutlineInputBorder(),
