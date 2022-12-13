@@ -59,5 +59,49 @@ _totalPrice() {
         10,
       ),
     ),
+    child: Column(
+      children: [
+        Row(
+          children: [
+            Text(
+              "Items (3)",
+            ),
+            Text(
+              "\$598.86",
+            ),
+          ],
+        ),
+        Row(
+          children: [
+            Text(
+              "Shipping",
+            ),
+            Text(
+              "\$40.00",
+            ),
+          ],
+        ),
+        Row(
+          children: [
+            Text(
+              " Import charges",
+            ),
+            Text(
+              "\$128.00",
+            ),
+          ],
+        ),
+        Row(
+          children: [
+            Text(
+              "Total Price",
+            ),
+            Text(
+              "\$766.86",
+            ),
+          ],
+        ),
+      ],
+    ),
   );
 }
