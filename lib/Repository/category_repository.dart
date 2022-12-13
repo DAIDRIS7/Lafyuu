@@ -30,12 +30,12 @@ class CategoryRepository {
 ////////////////
   getProductsByCategory(categoryName) async {
     final response = await Dio().get(
-      "https://dummyjson.com/products/category/categoryName",
+      "https://dummyjson.com/products/category/$categoryName",
     );
     final listOfProductsByCategory = ProductsByCategoryModel.fromJson(
       response.data,
     );
-    print("this is : $listOfProductsByCategory ");
+    print("this is : ${listOfProductsByCategory.products} ");
     return listOfProductsByCategory.products;
   }
 }
