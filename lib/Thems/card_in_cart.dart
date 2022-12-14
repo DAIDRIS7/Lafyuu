@@ -52,7 +52,7 @@ class CardInCartModel extends StatelessWidget {
                   SizedBox(
                     width: 10,
                   ),
-                  Icon(Icons.favorite),
+                  Icon(Icons.favorite_border),
                   SizedBox(
                     width: 10,
                   ),
@@ -83,26 +83,32 @@ class CardInCartModel extends StatelessWidget {
                       children: [
                         Container(
                           width: 31,
-                          child: IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.add,
+                          child: Center(
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.remove,
+                              ),
                             ),
                           ),
                         ),
                         Container(
                           width: 40,
                           color: Appcolors().myGrey,
-                          child: Text(
-                            "1",
+                          child: Center(
+                            child: Text(
+                              "1",
+                            ),
                           ),
                         ),
                         Container(
                           width: 31,
-                          child: IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.remove,
+                          child: Center(
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.add,
+                              ),
                             ),
                           ),
                         ),
