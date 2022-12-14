@@ -13,7 +13,7 @@ class ProductDetails extends StatelessWidget {
   final productPrice;
   final productImages;
   final productBrand;
-  
+
   List listofcolor = [
     Appcolors().myBlue,
     Appcolors().myRed,
@@ -363,7 +363,6 @@ class ProductDetails extends StatelessWidget {
               ],
             ),
 
-            
             Container(
               height: 250,
               width: MediaQuery.of(context).size.width,

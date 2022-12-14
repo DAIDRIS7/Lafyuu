@@ -8,5 +8,22 @@ class CartRepository {
     );
     final listOfCartsDetails = CartModel.fromJson(response.data);
     return listOfCartsDetails.products;
+    listOfCartsDetails.discountedTotal;
+    getTotal() {
+      final getTotal = listOfCartsDetails.total;
+      return getTotal;
+    }
+
+    getDiscount() {
+      final getDiscount = listOfCartsDetails.discountedTotal;
+      return getDiscount;
+    }
+
+    getQuantity() {
+      final getQuantity = listOfCartsDetails.totalQuantity;
+      return getQuantity;
+    }
+
+    listOfCartsDetails.products;
   }
 }
