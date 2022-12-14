@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lafyuu/Cubits/ProductsByCategory_Cubit/productsbycategory_cubit.dart';
 import 'package:lafyuu/Cubits/ProductsByCategory_Cubit/productsbycategory_states.dart';
+import 'package:lafyuu/Screens/ProductDetails/product_details.dart';
 import 'package:lafyuu/Thems/rating_bar.dart';
 
 class ProductsByCategory extends StatelessWidget {
@@ -35,14 +36,18 @@ class ProductsByCategory extends StatelessWidget {
               itemBuilder: (context, index) {
                 return GestureDetector(
                   onTap: () {
-                    //  Navigator.push(
-                    //context,
-                    //    MaterialPageRoute(
-                    //    builder: (context) => ProductDetails(
-                    //          productName: myItem[index].title,
-                    //             ),
-                    //        ),
-                    //           );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ProductDetails(
+                          productName: myItem[index].title,
+                          productImages: myItem[index].images,
+                          productDescription: myItem[index].description,
+                          productPrice: myItem[index].price,
+                          productBrand: myItem[index].brand,
+                        ),
+                      ),
+                    );
                   },
                   child: Container(
                     height: 238,

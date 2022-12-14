@@ -29,7 +29,7 @@ class _CardInCartModelState extends State<CardInCartModel> {
         return ListView.builder(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
-            itemCount: listOfCartsDetails.length,
+            itemCount: listOfCartsDetails!.length,
             itemBuilder: (context, index) {
               return Container(
                 height: 104,
