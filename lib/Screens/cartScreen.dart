@@ -36,7 +36,9 @@ class _CartScreenState extends State<CartScreen> {
             SizedBox(
               height: 15,
             ),
-            _totalPrice(),
+            _totalPrice(
+              total: 223,
+            ),
             SizedBox(
               height: 15,
             ),

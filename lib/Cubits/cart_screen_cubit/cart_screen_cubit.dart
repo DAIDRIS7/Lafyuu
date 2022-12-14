@@ -6,6 +6,11 @@ class CartCubit extends Cubit<CartStates> {
   CartCubit() : super(LoddingCart());
   getCartDetails() async {
     final cartDetails = await CartRepository().getCartDetails();
-    emit(LoddedCart(cartDetails));
+    emit(LoddedCart(list: cartDetails));
+  }
+
+  getTotal() {
+    final total = CartRepository().getTotal();
+    emit(LoddedCart(totalPrice: total));
   }
 }

@@ -31,11 +31,6 @@ class _CardInCartModelState extends State<CardInCartModel> {
             physics: NeverScrollableScrollPhysics(),
             itemCount: listOfCartsDetails.length,
             itemBuilder: (context, index) {
-              listOfCartsDetails[index].discountPercentage;
-              listOfCartsDetails[index].discountedPrice;
-              listOfCartsDetails[index].title;
-              listOfCartsDetails[index].quantity;
-              listOfCartsDetails[index].total;
               return Container(
                 height: 104,
                 width: 343,
