@@ -15,6 +15,7 @@ class _CardInCartModelState extends State<CardInCartModel> {
     context.read<CartCubit>().getCartDetails();
   }
 
+  final cubit = CartCubit()..getCartDetails();
   Widget build(BuildContext context) {
     return BlocBuilder<CartCubit, CartStates>(builder: (context, state) {
       if (state is LoddingCart) {
