@@ -16,7 +16,7 @@ class CartScreen extends StatelessWidget {
         ),
       ),
       body: SafeArea(
-        child: Column(
+        child: ListView(
           children: [
             CardInCartModel(),
             SizedBox(
