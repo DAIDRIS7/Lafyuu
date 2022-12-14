@@ -4,7 +4,16 @@ import 'package:lafyuu/Cubits/cart_screen_cubit/cart_screen_cubit.dart';
 import 'package:lafyuu/Cubits/cart_screen_cubit/cart_screen_states.dart';
 import 'package:lafyuu/Thems/app_colors.dart';
 
-class CardInCartModel extends StatelessWidget {
+class CardInCartModel extends StatefulWidget {
+  @override
+  State<CardInCartModel> createState() => _CardInCartModelState();
+}
+
+class _CardInCartModelState extends State<CardInCartModel> {
+  initState() {
+    super.initState();
+  }
+
   Widget build(BuildContext context) {
     return BlocBuilder<CartCubit, CartStates>(builder: (context, state) {
       return Container(
