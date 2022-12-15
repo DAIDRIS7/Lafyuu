@@ -112,11 +112,10 @@ class _CardInCartModelState extends State<CardInCartModel> {
                                   Container(
                                     width: 31,
                                     child: IconButton(
+                                      padding: EdgeInsets.zero,
                                       onPressed: () {},
-                                      icon: Center(
-                                        child: Icon(
-                                          Icons.remove,
-                                        ),
+                                      child: Icon(
+                                        Icons.remove,
                                       ),
                                     ),
                                   ),
@@ -131,12 +130,11 @@ class _CardInCartModelState extends State<CardInCartModel> {
                                   ),
                                   Container(
                                     width: 31,
-                                    child: Center(
-                                      child: IconButton(
-                                        onPressed: () {},
-                                        icon: Icon(
-                                          Icons.add,
-                                        ),
+                                    child: IconButton(
+                                      padding: EdgeInsets.zero,
+                                      onPressed: () {},
+                                      icon: Icon(
+                                        Icons.add,
                                       ),
                                     ),
                                   ),
