@@ -113,8 +113,10 @@ class _CardInCartModelState extends State<CardInCartModel> {
                                     width: 31,
                                     child: IconButton(
                                       padding: EdgeInsets.zero,
-                                      onPressed: () {},
-                                      child: Icon(
+                                      onPressed: () {
+                                        listOfCartsDetails[index].quantity--;
+                                      },
+                                      icon: Icon(
                                         Icons.remove,
                                       ),
                                     ),
@@ -132,7 +134,9 @@ class _CardInCartModelState extends State<CardInCartModel> {
                                     width: 31,
                                     child: IconButton(
                                       padding: EdgeInsets.zero,
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        listOfCartsDetails[index].quantity++;
+                                      },
                                       icon: Icon(
                                         Icons.add,
                                       ),
