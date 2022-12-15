@@ -13,4 +13,13 @@ class CartCubit extends Cubit<CartStates> {
     final total = CartRepository().getTotal();
     emit(LoddedCartTwo(total));
   }
+
+  getQuantity() async {
+    final getQuantity = CartRepository().getQuantity();
+    emit(LoddedCartTwo(getQuantity));
+  }
+
+  getDiscountPrice() async {
+    final getDiscountPrice = CartRepository().getDiscount();
+  }
 }

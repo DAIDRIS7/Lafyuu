@@ -26,10 +26,10 @@ class CartRepository {
     );
 
     final getDiscount = CartModel.fromJson(response.data);
-    return getDiscount;
+    return getDiscount.discountedTotal;
   }
 
-  Future<int> getQuantity() async {
+  getQuantity() async {
     final response = await Dio().get(
       "https://dummyjson.com/carts/1",
     );
