@@ -2,27 +2,39 @@ import 'package:dio/dio.dart';
 import 'package:lafyuu/Model/cart_model.dart';
 
 class CartRepository {
-  late final listOfCartsDetails;
-  getCartDetails() async {
+//  late final listOfCartsDetails;
+  Future<List<Product>> getCartDetails() async {
     final response = await Dio().get(
       "https://dummyjson.com/carts/1",
     );
-    listOfCartsDetails = CartModel.fromJson(response.data);
+    final listOfCartsDetails = CartModel.fromJson(response.data);
     return listOfCartsDetails.products;
   }
 
-  getTotal() {
-    final getTotal = listOfCartsDetails.total;
-    return getTotal;
+  getTotal() async {
+    final response = await Dio().get(
+      "https://dummyjson.com/carts/1",
+    );
+
+    final CartModel getTotal = CartModel.fromJson(response.data);
+    return getTotal.total;
   }
 
-  getDiscount() {
-    final getDiscount = listOfCartsDetails.discountedTotal;
+  getDiscount() async {
+    final response = await Dio().get(
+      "https://dummyjson.com/carts/1",
+    );
+
+    final getDiscount = CartModel.fromJson(response.data);
     return getDiscount;
   }
 
   Future<int> getQuantity() async {
-    final getQuantity = listOfCartsDetails.totalQuantity;
-    return getQuantity;
+    final response = await Dio().get(
+      "https://dummyjson.com/carts/1",
+    );
+
+    final getQuantity = CartModel.fromJson(response.data);
+    return getQuantity.totalQuantity;
   }
 }

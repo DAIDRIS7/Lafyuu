@@ -5,10 +5,13 @@ abstract class CartStates {}
 class LoddingCart extends CartStates {}
 
 class LoddedCart extends CartStates {
-  List<Product>? list;
-  int? totalPrice;
+  List<Product> list;
   LoddedCart({
-    this.list,
-    this.totalPrice,
+    required this.list,
   });
+}
+
+class LoddedCartTwo extends CartStates {
+  int number;
+  LoddedCartTwo(this.number);
 }

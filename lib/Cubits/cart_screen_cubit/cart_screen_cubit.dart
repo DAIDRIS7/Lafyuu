@@ -9,8 +9,8 @@ class CartCubit extends Cubit<CartStates> {
     emit(LoddedCart(list: cartDetails));
   }
 
-  getTotal() {
+  getTotal() async {
     final total = CartRepository().getTotal();
-    emit(LoddedCart(totalPrice: total));
+    emit(LoddedCartTwo(total));
   }
 }

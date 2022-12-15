@@ -37,8 +37,8 @@ class _CartScreenState extends State<CartScreen> {
               height: 15,
             ),
             _totalPrice(
-              total: 223,
-            ),
+                //total: CartCubit()..getTotal(),
+                ),
             SizedBox(
               height: 15,
             ),
@@ -148,7 +148,7 @@ _totalPrice({
               ),
             ),
             Text(
-              "\$ $total",
+              "\$ ${CartCubit().getTotal()}",
               style: TextStyle(color: Appcolors().myBlue),
             ),
           ],
