@@ -24,13 +24,15 @@ class _CardInCartModelState extends State<CardInCartModel> {
         );
       }
       if (state is LoddedCart) {
-        final listOfCartsDetails = state.list;
+        final listOfAllDetailsProductInCart = state.list;
 
         return ListView.builder(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
-            itemCount: listOfCartsDetails.length,
+            itemCount: listOfAllDetailsProductInCart.products.length,
             itemBuilder: (context, index) {
+              final listOfCartsDetails =
+                  listOfAllDetailsProductInCart.products[index];
               return Container(
                 height: 104,
                 width: 343,
@@ -70,7 +72,7 @@ class _CardInCartModelState extends State<CardInCartModel> {
                             Container(
                               width: 168,
                               child: Text(
-                                "${listOfCartsDetails[index].title}",
+                                "${listOfCartsDetails.title}",
                                 style: TextStyle(
                                   fontWeight: FontWeight.w700, fontSize: 12,
                                   //  height: 56,
@@ -92,7 +94,7 @@ class _CardInCartModelState extends State<CardInCartModel> {
                           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              "\$ ${listOfCartsDetails[index].price}",
+                              "\$ ${listOfCartsDetails.price}",
                               style: TextStyle(
                                 color: Appcolors().myBlue,
                               ),
@@ -114,7 +116,7 @@ class _CardInCartModelState extends State<CardInCartModel> {
                                     child: IconButton(
                                       padding: EdgeInsets.zero,
                                       onPressed: () {
-                                        listOfCartsDetails[index].quantity--;
+                                        listOfCartsDetails.quantity--;
                                       },
                                       icon: Icon(
                                         Icons.remove,
@@ -126,7 +128,7 @@ class _CardInCartModelState extends State<CardInCartModel> {
                                     color: Appcolors().myGrey,
                                     child: Center(
                                       child: Text(
-                                        "${listOfCartsDetails[index].quantity}",
+                                        "${listOfCartsDetails.quantity}",
                                       ),
                                     ),
                                   ),
@@ -135,7 +137,7 @@ class _CardInCartModelState extends State<CardInCartModel> {
                                     child: IconButton(
                                       padding: EdgeInsets.zero,
                                       onPressed: () {
-                                        listOfCartsDetails[index].quantity++;
+                                        listOfCartsDetails.quantity++;
                                       },
                                       icon: Icon(
                                         Icons.add,
