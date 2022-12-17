@@ -15,6 +15,11 @@ class CartScreen extends StatefulWidget {
 }
 
 class _CartScreenState extends State<CartScreen> {
+  initState() {
+    super.initState();
+    context.read<CartCubit>().getCartDetails();
+  }
+
   @override
   Widget build(context) {
     //assert(index != null);
@@ -25,10 +30,15 @@ class _CartScreenState extends State<CartScreen> {
           "Your Cart",
         ),
       ),
-      body: SafeArea(
+      body: _buildbody(),
+    );
+  }
+}
+Widget _buildbody(){
+  return  SafeArea(
         child: ListView(
           children: [
-            CardInCartModel(),
+            //CardInCartModel(),
             SizedBox(
               height: 15,
             ),
@@ -41,7 +51,7 @@ class _CartScreenState extends State<CartScreen> {
               height: 15,
             ),
             Container(
-              width: MediaQuery.of(context).size.width,
+          //    width: MediaQuery.of(context).size.width,
               child: ElevatedButton(
                 onPressed: () {},
                 child: Text(
@@ -51,11 +61,8 @@ class _CartScreenState extends State<CartScreen> {
             ),
           ],
         ),
-      ),
-    );
-  }
+      );
 }
-
 _cuponField() {
   return Container(
     height: 43,
