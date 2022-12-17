@@ -23,14 +23,18 @@ class ItemCardG extends StatelessWidget {
               itemBuilder: (context, index) {
                 return GestureDetector(
                   onTap: () {
-                    //  Navigator.push(
-                    //context,
-                    //    MaterialPageRoute(
-                    //    builder: (context) => ProductDetails(
-                    //          productName: myItem[index].title,
-                    //             ),
-                    //        ),
-                    //           );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ProductDetails(
+                          productName: myItem[index].title,
+                          productImages: myItem[index].images,
+                          productDescription: myItem[index].description,
+                          productBrand: myItem[index].brand,
+                          productPrice: myItem[index].price,
+                        ),
+                      ),
+                    );
                   },
                   child: Container(
                     height: 238,
