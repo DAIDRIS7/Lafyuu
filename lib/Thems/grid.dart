@@ -56,11 +56,15 @@ class ItemCardG extends StatelessWidget {
                       ),
                     ),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
                           height: 109,
                           width: 109,
-                          margin: const EdgeInsets.only(),
+                          margin: const EdgeInsets.only(
+                            left: 16,
+                          ),
+                          padding: EdgeInsets.all(16),
                           decoration: BoxDecoration(
                             image: DecorationImage(
                               fit: BoxFit.cover,
@@ -86,6 +90,9 @@ class ItemCardG extends StatelessWidget {
                           height: 6,
                         ),
                         const Rating(),
+                        SizedBox(
+                          height: 10,
+                        ),
                         Row(
                           children: [
                             Text(
@@ -95,6 +102,9 @@ class ItemCardG extends StatelessWidget {
                               ),
                             ),
                           ],
+                        ),
+                        SizedBox(
+                          height: 10,
                         ),
                         Row(
                           children: [
@@ -124,7 +134,7 @@ class ItemCardG extends StatelessWidget {
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
                 crossAxisCount: 2,
-                childAspectRatio: 1,
+                childAspectRatio: 0.67,
               ),
             );
           }
