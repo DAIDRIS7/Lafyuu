@@ -36,11 +36,7 @@ class _CartScreenState extends State<CartScreen> {
             SizedBox(
               height: 15,
             ),
-            _totalPrice(
-              total: CartCubit()..getTotal(),
-              discountedPrice: CartCubit().getDiscountPrice(),
-              quantity: CartCubit().getQuantity(),
-            ),
+            _totalPrice(),
             SizedBox(
               height: 15,
             ),
