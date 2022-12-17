@@ -10,16 +10,16 @@ class CartCubit extends Cubit<CartStates> {
   }
 
   getTotal() async {
-    final total = CartRepository().getTotal();
-    emit(LoddedCartTwo(total));
+    final total = await CartRepository().getTotal();
+    emit(LoddedCart(total));
   }
 
   getQuantity() async {
-    final getQuantity = CartRepository().getQuantity();
-    emit(LoddedCartTwo(getQuantity));
+    final getQuantity = await CartRepository().getQuantity();
+    emit(LoddedCart(getQuantity));
   }
 
   getDiscountPrice() async {
-    final getDiscountPrice = CartRepository().getDiscount();
+    final getDiscountPrice = await CartRepository().getDiscount();
   }
 }
