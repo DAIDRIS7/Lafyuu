@@ -30,39 +30,58 @@ class _CartScreenState extends State<CartScreen> {
           "Your Cart",
         ),
       ),
-      body: _buildbody(),
+      body: BlocBuilder<CartCubit, CartStates>(builder: (context, state) {
+        if (state is LoddedCart) {
+          final cartDetails = state.list;
+
+          return _buildbody(cartDetails);
+        }
+        return Center(
+          child: Text(
+            "Try again later",
+          ),
+        );
+      }),
     );
   }
 }
-Widget _buildbody(){
-  return  SafeArea(
-        child: ListView(
-          children: [
-            //CardInCartModel(),
-            SizedBox(
-              height: 15,
-            ),
-            _cuponField(),
-            SizedBox(
-              height: 15,
-            ),
-            _totalPrice(),
-            SizedBox(
-              height: 15,
-            ),
-            Container(
-          //    width: MediaQuery.of(context).size.width,
-              child: ElevatedButton(
-                onPressed: () {},
-                child: Text(
-                  "Check out",
-                ),
-              ),
-            ),
-          ],
+
+Widget _buildbody(CartModel cartDetails) {
+  return SafeArea(
+    child: ListView(
+      children: [
+        CardInCartModel(
+          listOfAllDetailsProductInCart: cartDetails,
         ),
-      );
+        SizedBox(
+          height: 15,
+        ),
+        _cuponField(),
+        SizedBox(
+          height: 15,
+        ),
+        _totalPrice(
+          total: cartDetails.total,
+          quantity: cartDetails.totalQuantity,
+          discountedPrice: cartDetails.discountedTotal,
+        ),
+        SizedBox(
+          height: 15,
+        ),
+        Container(
+          //    width: MediaQuery.of(context).size.width,
+          child: ElevatedButton(
+            onPressed: () {},
+            child: Text(
+              "Check out",
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
 }
+
 _cuponField() {
   return Container(
     height: 43,
