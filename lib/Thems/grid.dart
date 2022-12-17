@@ -17,7 +17,8 @@ class ItemCardG extends StatelessWidget {
             final myItem = state.list;
 
             return GridView.builder(
-              scrollDirection: Axis.horizontal,
+              shrinkWrap: true,
+              //scrollDirection: Axis.horizontal,
               itemCount: myItem.length,
               itemBuilder: (context, index) {
                 return GestureDetector(
@@ -119,6 +120,7 @@ class ItemCardG extends StatelessWidget {
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
                 crossAxisCount: 2,
+                childAspectRatio: 1,
               ),
             );
           }

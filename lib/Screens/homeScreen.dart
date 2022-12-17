@@ -9,6 +9,7 @@ import 'package:lafyuu/Screens/categories/productsByCategory.dart';
 import 'package:lafyuu/Thems/card.dart';
 import 'package:lafyuu/Thems/carousel.dart';
 import 'package:lafyuu/Model/categoryModel.dart';
+import 'package:lafyuu/Thems/grid.dart';
 
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -240,6 +241,7 @@ Product""",
                     const SizedBox(
                       height: 10,
                     ),
+                    ItemCardG(),
                   ]),
             ),
           ),
