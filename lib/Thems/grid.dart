@@ -134,7 +134,7 @@ class ItemCardG extends StatelessWidget {
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
                 crossAxisCount: 2,
-                childAspectRatio: 0.67,
+                childAspectRatio: 0.63,
               ),
             );
           }
