@@ -11,8 +11,10 @@ class AdressDetails extends StatelessWidget {
 
 _buildbody(context) {
   return Container(
+    padding: EdgeInsets.all(19),
     width: MediaQuery.of(context).size.width,
     child: Column(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Card(
           margin: EdgeInsets.all(14.0),
@@ -20,13 +22,9 @@ _buildbody(context) {
             SizedBox(
               height: 8,
             ),
-            Row(
-              children: [
-                Text(
-                  "DAIDRIS7",
-                  textAlign: TextAlign.end,
-                ),
-              ],
+            Text(
+              "DAIDRIS7",
+              textAlign: TextAlign.end,
             ),
             SizedBox(
               height: 8,

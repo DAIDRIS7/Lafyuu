@@ -8,7 +8,9 @@ class AddAddress extends StatelessWidget {
           "Add Address",
         ),
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             Icons.arrow_back_ios,
           ),
@@ -20,8 +22,14 @@ class AddAddress extends StatelessWidget {
             children: [
               Text(
                 "Country",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
+          ),
+          SizedBox(
+            height: 8,
           ),
           TextFormField(
             decoration: InputDecoration(
