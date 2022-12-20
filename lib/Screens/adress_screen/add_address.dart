@@ -9,6 +9,7 @@ class AddAddress extends StatelessWidget {
         backgroundColor: Appcolors().myWhite,
         title: Text(
           "Add Address",
+          style: TextStyle(color: Appcolors().myDark),
         ),
         leading: IconButton(
           onPressed: () {

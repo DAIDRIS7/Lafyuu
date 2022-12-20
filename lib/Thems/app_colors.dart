@@ -11,5 +11,5 @@ class Appcolors {
   Color myGrey = const Color(0xff9098B1);
   Color myLight = const Color(0xffEBF0FF);
 
-  Color myWhite = const Color(0xff40BFFF);
+  Color myWhite = const Color(0xffFFFFFF);
 }
