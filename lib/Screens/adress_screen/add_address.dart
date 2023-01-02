@@ -1,7 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:lafyuu/Thems/app_colors.dart';
 
-class AddAddress extends StatelessWidget {
+class AddAddress extends StatefulWidget {
+  @override
+  State<AddAddress> createState() => _AddAddressState();
+}
+
+class _AddAddressState extends State<AddAddress> {
+  final listOfCountries = [
+    "Sudan",
+    "Egypt",
+    "Portugal",
+    "Qatar",
+  ];
+
+  //_AddAddressState(this.listOfCountries);
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Appcolors().myWhite,
@@ -18,6 +31,7 @@ class AddAddress extends StatelessWidget {
           icon: Icon(
             Icons.arrow_back_ios,
           ),
+          color: Appcolors().myDark,
         ),
       ),
       body: SafeArea(
@@ -35,12 +49,7 @@ class AddAddress extends StatelessWidget {
           SizedBox(
             height: 8,
           ),
-          TextFormField(
-            decoration: InputDecoration(
-              hintText: 'choose ',
-              border: OutlineInputBorder(),
-            ),
-          ),
+          _dropdownSection(listOfCountries),
           _formFieldSeccsion(
             name: "First Name",
           ),
@@ -104,5 +113,19 @@ _formFieldSeccsion({name, hintText}) {
             ),
       ),
     ],
+  );
+}
+
+_dropdownSection(List<String> listOfCountries) {
+  return DropdownButtonFormField(
+    items: listOfCountries
+        .map(
+          (e) => DropdownMenuItem(
+            child: Text(e),
+            value: e,
+          ),
+        )
+        .toList(),
+    onChanged: (value) {},
   );
 }
