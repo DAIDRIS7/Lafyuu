@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lafyuu/Screens/adress_screen/add_address.dart';
+import 'package:lafyuu/Screens/order_screens/order_screen.dart';
+import 'package:lafyuu/Screens/payment_screens/add_payment.dart';
 
 class Account extends StatefulWidget {
   const Account({Key? key}) : super(key: key);
@@ -47,7 +50,13 @@ class _AccountState extends State<Account> {
             Container(
               width: MediaQuery.of(context).size.width,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => OrderScreen(),
+                      ));
+                },
                 child: Row(
                   children: [
                     const Icon(
@@ -66,7 +75,13 @@ class _AccountState extends State<Account> {
             Container(
               width: MediaQuery.of(context).size.width,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AddAddress(),
+                      ));
+                },
                 child: Row(
                   children: [
                     const Icon(
@@ -85,7 +100,12 @@ class _AccountState extends State<Account> {
             Container(
               width: MediaQuery.of(context).size.width,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AddPayment()),
+                  );
+                },
                 child: Row(
                   children: [
                     const Icon(
