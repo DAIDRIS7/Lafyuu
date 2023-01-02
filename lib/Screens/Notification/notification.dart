@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lafyuu/Screens/Notification/activity_notifications.dart';
+import 'package:lafyuu/Screens/Notification/notifacaions_in_feed.dart';
+import 'package:lafyuu/Screens/Notification/notifications_in_offer.dart';
 
 class NotificationScreen extends StatefulWidget {
   @override
@@ -31,7 +34,13 @@ class _NotificationScreenState extends State<NotificationScreen> {
                 ],
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => OffersNotifications(),
+                      ));
+                },
                 child: Row(
                   children: [
                     const Icon(
@@ -47,7 +56,14 @@ class _NotificationScreenState extends State<NotificationScreen> {
                 ),
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => FeedNotifications(),
+                    ),
+                  );
+                },
                 child: Row(
                   children: [
                     Icon(
@@ -63,7 +79,14 @@ class _NotificationScreenState extends State<NotificationScreen> {
                 ),
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ActivityNotifications(),
+                    ),
+                  );
+                },
                 child: Row(
                   children: [
                     const Icon(
