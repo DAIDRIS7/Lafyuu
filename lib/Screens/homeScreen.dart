@@ -48,8 +48,8 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     if (isconnected == false) {
-      return Container(
-        child: Center(
+      return Scaffold(
+        body: Center(
           child: Text(
             "Internet is not connected",
           ),
