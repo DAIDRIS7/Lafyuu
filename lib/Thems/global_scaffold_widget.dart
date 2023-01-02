@@ -1,24 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:lafyuu/Thems/app_colors.dart';
 
 class MyScaffoldWidget extends StatelessWidget {
   final String titleText;
   final Widget? leadingIcon;
   final Widget body;
-  MyScaffoldWidget(
-    this.titleText,
+  MyScaffoldWidget({
+    required this.titleText,
     this.leadingIcon,
-    this.body,
-  );
+    required this.body,
+  });
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Appcolors().myWhite,
       appBar: AppBar(
-        title: Text(titleText),
+        backgroundColor: Appcolors().myWhite,
+        elevation: 0,
+        title: Text(
+          titleText,
+          style: TextStyle(
+            color: Appcolors().myDark,
+          ),
+        ),
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: leadingIcon ??
               Icon(
                 Icons.arrow_back_ios,
+                color: Appcolors().myDark,
               ),
         ),
       ),
