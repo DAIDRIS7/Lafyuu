@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lafyuu/Screens/order_screens/order_details.dart';
 import 'package:lafyuu/Thems/app_colors.dart';
 import 'package:lafyuu/Thems/global_scaffold_widget.dart';
 
@@ -6,7 +7,14 @@ class OrderScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MyScaffoldWidget(
       titleText: 'Order',
-      body: SafeArea(
+      body: GestureDetector(
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => OrderDetailsScreen(),
+              ));
+        },
         child: _cardInOrder(),
       ),
     );
