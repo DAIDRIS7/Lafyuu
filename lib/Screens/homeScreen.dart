@@ -148,17 +148,13 @@ class _HomepageState extends State<Homepage> {
                                         child: Column(
                                           children: [
                                             CircleAvatar(
-                                              radius: 31,
-                                              child: CircleAvatar(
-                                                radius: 30,
-                                                backgroundColor: Colors.white,
-                                                child: Image.network(
-                                                  snapshot
-                                                      .data![index].urlImage,
-                                                  width: 50,
-                                                  height: 50,
-                                                  color: Colors.redAccent,
-                                                ),
+                                              radius: 30,
+                                              backgroundColor: Colors.white,
+                                              child: Image.network(
+                                                snapshot.data![index].urlImage,
+                                                width: 50,
+                                                height: 50,
+                                                color: Colors.redAccent,
                                               ),
                                             ),
                                             Text(
