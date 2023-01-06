@@ -7,7 +7,7 @@ import 'package:lafyuu/Screens/homeScreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 // ignore: prefer_typing_uninitialized_variables
-Object? access;
+//Object? access;
 
 class Login extends StatefulWidget {
   @override
@@ -167,7 +167,7 @@ class _LoginState extends State<Login> {
       //  _completeLogin();
       final prefs = await SharedPreferences.getInstance();
       await prefs.setString('MyaccessToken', accessToken);
-      access = prefs.get('MyaccessToken');
+      final access = prefs.get('MyaccessToken');
       print('MyaccessToken:$access');
       _completeLogin();
     } on DioError catch (e) {
