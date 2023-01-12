@@ -1,24 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lafyuu/features/home/cubits/product_cubit.dart';
-import 'package:lafyuu/features/home/cubits/product_states.dart';
+import 'package:lafyuu/features/categories/cubits/productsbycategory_cubit.dart';
+import 'package:lafyuu/features/categories/cubits/product_by_category_cubit/productsbycategory_states.dart';
 import 'package:lafyuu/features/ProductDetails/product_details.dart';
 import 'package:lafyuu/Thems/rating_bar.dart';
 
-class ItemCardG extends StatelessWidget {
-  @override
+class ProductsByCategory extends StatelessWidget {
+  final categoryName;
+  const ProductsByCategory({Key? key, this.categoryName}) : super(key: key);
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return BlocProvider(
-      create: (BuildContext context) => ProductCubit()..getAllProduct(),
-      child: BlocBuilder<ProductCubit, ProductState>(
-        builder: (context, state) {
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back_ios,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: Text(
+          "$categoryName  Category ",
+        ),
+      ),
+      body: BlocProvider(
+        create: (BuildContext context) =>
+            ProductsByCategoryCubit()..getProductsByCategory(categoryName),
+        child: BlocBuilder<ProductsByCategoryCubit, ProductsByCategoryState>(
+            builder: (context, state) {
           if (state is SuccessState) {
             final myItem = state.list;
-
             return GridView.builder(
-              shrinkWrap: true,
-              //scrollDirection: Axis.horizontal,
+              scrollDirection: Axis.vertical,
               itemCount: myItem.length,
               itemBuilder: (context, index) {
                 return GestureDetector(
@@ -30,8 +43,8 @@ class ItemCardG extends StatelessWidget {
                           productName: myItem[index].title,
                           productImages: myItem[index].images,
                           productDescription: myItem[index].description,
-                          productBrand: myItem[index].brand,
                           productPrice: myItem[index].price,
+                          productBrand: myItem[index].brand,
                         ),
                       ),
                     );
@@ -56,21 +69,15 @@ class ItemCardG extends StatelessWidget {
                       ),
                     ),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
                           height: 109,
                           width: 109,
-                          margin: const EdgeInsets.only(
-                            left: 16,
-                          ),
-                          padding: EdgeInsets.all(16),
+                          margin: const EdgeInsets.only(),
                           decoration: BoxDecoration(
                             image: DecorationImage(
                               fit: BoxFit.cover,
-                              image: NetworkImage(
-                                myItem[index].urlImage,
-                              ),
+                              image: NetworkImage(myItem[index].thumbnail),
                             ),
                             border: Border.all(
                               color: Colors.grey,
@@ -89,37 +96,31 @@ class ItemCardG extends StatelessWidget {
                         const SizedBox(
                           height: 6,
                         ),
-                        const Rating(),
-                        SizedBox(
-                          height: 10,
-                        ),
+                        Rating(),
                         Row(
                           children: [
                             Text(
                               """${myItem[index].price}""",
-                              style: const TextStyle(
+                              style: TextStyle(
                                 color: Colors.blueAccent,
                               ),
                             ),
                           ],
                         ),
-                        SizedBox(
-                          height: 10,
-                        ),
                         Row(
                           children: [
                             Text(
-                              "${myItem[index].oldPrice}",
-                              style: const TextStyle(
+                              "${myItem[index].price}",
+                              style: TextStyle(
                                 decoration: TextDecoration.lineThrough,
                               ),
                             ),
-                            const SizedBox(
+                            SizedBox(
                               width: 5,
                             ),
                             Text(
-                              "${myItem[index].discount}",
-                              style: const TextStyle(
+                              "${myItem[index].discountPercentage}",
+                              style: TextStyle(
                                 color: Colors.redAccent,
                               ),
                             ),
@@ -130,16 +131,18 @@ class ItemCardG extends StatelessWidget {
                   ),
                 );
               },
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
                 crossAxisCount: 2,
-                childAspectRatio: 0.63,
+                childAspectRatio: 0.7,
               ),
             );
           }
-          return const Center(child: const CircularProgressIndicator());
-        },
+          return Center(
+            child: CircularProgressIndicator(),
+          );
+        }),
       ),
     );
   }

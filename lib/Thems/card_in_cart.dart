@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lafyuu/Cubits/cart_screen_cubit/cart_screen_cubit.dart';
-import 'package:lafyuu/Cubits/cart_screen_cubit/cart_screen_states.dart';
+import 'package:lafyuu/features/cart/cubits/cart_screen_cubit.dart';
+import 'package:lafyuu/features/cart/cubits/cart_screen_states.dart';
 import 'package:lafyuu/Thems/app_colors.dart';
 
 class CardInCartModel extends StatefulWidget {

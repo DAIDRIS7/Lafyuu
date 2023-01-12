@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lafyuu/Cubits/cart_screen_cubit/cart_screen_cubit.dart';
-import 'package:lafyuu/Screens/payment_screens/add_payment.dart';
-import 'package:lafyuu/Screens/main_.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lafyuu/Screens/splash_Screen/splash_screen.dart';
+import 'package:lafyuu/features/cart/cubits/cart_screen_cubit.dart';
+import 'package:lafyuu/features/splash/splash_screen.dart';
+
 import 'package:provider/provider.dart';
 
 void main() {
