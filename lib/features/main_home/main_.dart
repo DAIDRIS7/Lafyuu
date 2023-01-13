@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lafyuu/features/account/account.dart';
+import 'package:lafyuu/features/account/screens/account.dart';
 import 'package:lafyuu/features/cart/screens/cartScreen.dart';
 import 'package:lafyuu/features/home/homeScreen.dart';
 import 'package:lafyuu/features/offer/offersScreen.dart';
