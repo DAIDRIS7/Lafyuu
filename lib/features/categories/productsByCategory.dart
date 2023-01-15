@@ -70,28 +70,32 @@ class ProductsByCategory extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
-                        Container(
-                          height: 109,
-                          width: 109,
-                          margin: const EdgeInsets.only(),
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: NetworkImage(myItem[index].thumbnail),
-                            ),
-                            border: Border.all(
-                              color: Colors.grey,
-                            ),
-                            borderRadius: BorderRadius.circular(
-                              5,
+                        Expanded(
+                          child: Container(
+                            height: 109,
+                            width: 109,
+                            margin: const EdgeInsets.only(),
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: NetworkImage(myItem[index].thumbnail),
+                              ),
+                              border: Border.all(
+                                color: Colors.grey,
+                              ),
+                              borderRadius: BorderRadius.circular(
+                                5,
+                              ),
                             ),
                           ),
                         ),
                         const SizedBox(
                           height: 5,
                         ),
-                        Text(
-                          myItem[index].title,
+                        Expanded(
+                          child: Text(
+                            myItem[index].title,
+                          ),
                         ),
                         const SizedBox(
                           height: 6,
@@ -99,29 +103,35 @@ class ProductsByCategory extends StatelessWidget {
                         Rating(),
                         Row(
                           children: [
-                            Text(
-                              """${myItem[index].price}""",
-                              style: TextStyle(
-                                color: Colors.blueAccent,
+                            Expanded(
+                              child: Text(
+                                """${myItem[index].price}""",
+                                style: TextStyle(
+                                  color: Colors.blueAccent,
+                                ),
                               ),
                             ),
                           ],
                         ),
                         Row(
                           children: [
-                            Text(
-                              "${myItem[index].price}",
-                              style: TextStyle(
-                                decoration: TextDecoration.lineThrough,
+                            Expanded(
+                              child: Text(
+                                "${myItem[index].price}",
+                                style: TextStyle(
+                                  decoration: TextDecoration.lineThrough,
+                                ),
                               ),
                             ),
                             SizedBox(
                               width: 5,
                             ),
-                            Text(
-                              "${myItem[index].discountPercentage}",
-                              style: TextStyle(
-                                color: Colors.redAccent,
+                            Expanded(
+                              child: Text(
+                                "${myItem[index].discountPercentage}",
+                                style: TextStyle(
+                                  color: Colors.redAccent,
+                                ),
                               ),
                             ),
                           ],
