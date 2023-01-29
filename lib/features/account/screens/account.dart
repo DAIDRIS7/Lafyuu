@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lafyuu/DAIDRIS7/daidris7.dart';
+import 'package:lafyuu/Thems/app_colors.dart';
+import 'package:lafyuu/Thems/global_scaffold_widget.dart';
 import 'package:lafyuu/features/address/add_address.dart';
 import 'package:lafyuu/features/order/order_screen.dart';
 import 'package:lafyuu/features/payment/add_payment.dart';
@@ -15,21 +18,24 @@ class _AccountState extends State<Account> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Scaffold(
+    return MyScaffoldWidget(
+      leadingIcon: IconButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DAIDRIS7(),
+              ),
+            );
+          },
+          icon: Icon(
+            Icons.person,
+            color: Appcolors().myBlue,
+          )),
+      titleText: 'Account',
       body: SafeArea(
         child: Column(
           children: [
-            Row(
-              children: [
-                const Text(
-                  "Account",
-                  style: const TextStyle(
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-              ],
-            ),
-            const Divider(),
             Container(
               width: MediaQuery.of(context).size.width,
               child: TextButton(
