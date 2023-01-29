@@ -9,12 +9,19 @@ import 'package:shared_preferences/shared_preferences.dart';
 // ignore: prefer_typing_uninitialized_variables
 //Object? access;
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
   final TextEditingController _emailController = TextEditingController();
 
   final TextEditingController _passwordController = TextEditingController();
 
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+
+  bool isObscureText = true;
 
   @override
   Widget build(BuildContext context) {
@@ -54,6 +61,7 @@ class Login extends StatelessWidget {
                           return "Invalid Email";
                         }
                       },
+                      textInputAction: TextInputAction.next,
                       controller: _emailController,
                       decoration: InputDecoration(
                         hintText: ("Your Email "),
@@ -73,8 +81,9 @@ class Login extends StatelessWidget {
                           return "Invalid password ";
                         }
                       },
+                      textInputAction: TextInputAction.next,
                       controller: _passwordController,
-                      obscureText: true,
+                      obscureText: isObscureText,
                       decoration: InputDecoration(
                         hintText: ("Your Password "),
                         border: OutlineInputBorder(),
@@ -82,7 +91,16 @@ class Login extends StatelessWidget {
                           Icons.lock,
                           color: Color(0xff9098B1),
                         ),
-                        suffixIcon: Icon(Icons.visibility_off),
+                        suffixIcon: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              isObscureText = !isObscureText;
+                            });
+                          },
+                          icon: isObscureText
+                              ? Icon(Icons.visibility_off)
+                              : Icon(Icons.visibility), // false
+                        ),
                       ),
                     ),
                   ),

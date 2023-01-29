@@ -55,6 +55,7 @@ class _RegistrationState extends State<Registration> {
                       12,
                     ),
                     child: TextFormField(
+                      textInputAction: TextInputAction.next,
                       controller: nameController,
                       validator: (value) {
                         if (value!.isNotEmpty && value.length > 2) {
@@ -75,12 +76,13 @@ class _RegistrationState extends State<Registration> {
                   Container(
                     margin: const EdgeInsets.all(12),
                     child: TextFormField(
+                      textInputAction: TextInputAction.next,
                       controller: emailController,
                       validator: (value) {
                         if (value!.isNotEmpty && value.length > 2) {
                           return null;
                         } else if (value.length < 3 && value.isNotEmpty) {
-                          return 'ppassword must be big than 8';
+                          return 'password must be big than 8';
                         } else {
                           return 'Please enter  your papassword';
                         }
@@ -99,6 +101,7 @@ class _RegistrationState extends State<Registration> {
                       12,
                     ),
                     child: TextFormField(
+                      textInputAction: TextInputAction.next,
                       controller: passwordController,
                       validator: (value) {
                         if (value!.isNotEmpty && value.length > 2) {
@@ -123,6 +126,7 @@ class _RegistrationState extends State<Registration> {
                       12,
                     ),
                     child: TextFormField(
+                      textInputAction: TextInputAction.next,
                       controller: secondpasswordController,
                       validator: (value) {
                         if (value!.isNotEmpty && value.length > 2) {
