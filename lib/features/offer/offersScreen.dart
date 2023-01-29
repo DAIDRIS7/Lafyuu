@@ -11,6 +11,16 @@ class _OffersState extends State<Offers> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Offers ',
+          style: TextStyle(
+            color: Appcolors().myDark,
+          ),
+        ),
+        elevation: 1,
+        backgroundColor: Appcolors().myWhite,
+      ),
       body: _bodyWidget(context),
     );
   }
@@ -163,9 +173,36 @@ _bodyWidget(context) {
             ],
           ),
         ),
-        Stack(
-          children: [Image.asset("assets/images/image1.png")],
+        SizedBox(
+          height: 7,
         ),
+        Stack(children: [
+          Container(
+            color: Colors.blue,
+            child: Image.asset('assets/images/image6.png'),
+          ),
+          const Positioned(
+            bottom: 60.0,
+            left: 50.0,
+            child: Text(
+              """Recomended
+Product""",
+              style: TextStyle(
+                fontWeight: FontWeight.w700,
+                color: Colors.white,
+              ),
+            ),
+          ),
+          const Positioned(
+              bottom: 30.0,
+              left: 50.0,
+              child: Text(
+                "We Recommended the best for you",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              )),
+        ]),
       ],
     ),
   );
