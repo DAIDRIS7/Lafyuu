@@ -174,14 +174,14 @@ class _LoginState extends State<Login> {
         "email": _emailController.text,
         "password": _passwordController.text,
       });
-      print("my response is : $response");
+      //print("my response is : $response");
 
       final accessToken = response.data['access_token'];
       //  _completeLogin();
       final prefs = await SharedPreferences.getInstance();
       await prefs.setString('MyaccessToken', accessToken);
       final access = prefs.get('MyaccessToken');
-      print('MyaccessToken:$access');
+      //print('MyaccessToken:$access');
       _completeLogin(context);
     } on DioError catch (e) {
       if (e.response!.statusCode == 401) {
