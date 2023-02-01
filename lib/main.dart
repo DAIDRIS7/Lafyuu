@@ -14,6 +14,7 @@ void main() {
         ),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: SplashScreen(),
       ),
     ),
