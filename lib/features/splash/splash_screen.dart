@@ -21,7 +21,9 @@ class _SplashScreenState extends State<SplashScreen> {
       final myAccessToken = await prefs.get(
         "access_token",
       );
-      print(myAccessToken);
+
+      //  print(myAccessToken);
+
       if (myAccessToken == null) {
         Navigator.pushReplacement<void, void>(
           context,
