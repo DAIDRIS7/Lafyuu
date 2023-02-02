@@ -31,6 +31,7 @@ dependencies:
   flutter_bloc: ^8.1.1
   provider: ^6.0.4
   timeline_tile: ^2.0.0
+  flutterfire_cli: ^0.2.7
 dev_dependencies:
   flutter_test:
     sdk: flutter
