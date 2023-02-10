@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lafyuu/DAIDRIS7/daidris7.dart';
 import 'package:lafyuu/Thems/app_colors.dart';
 import 'package:lafyuu/Thems/global_scaffold_widget.dart';
 import 'package:lafyuu/features/address/add_address.dart';
@@ -24,7 +23,7 @@ class _AccountState extends State<Account> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => DAIDRIS7(),
+                builder: (context) => ProfileInfo(),
               ),
             );
           },

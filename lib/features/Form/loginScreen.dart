@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:lafyuu/features/Form/signupScreen.dart';
 import 'package:lafyuu/features/main_home/main_.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
+//import 'package:Lafyuu/features/firebase_options.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 // ignore: prefer_typing_uninitialized_variables
@@ -125,7 +128,7 @@ class _LoginState extends State<Login> {
                   ]),
                   SignInButton(
                     Buttons.Google,
-                    onPressed: () {},
+                    onPressed: () async => await _signInByGoogle(),
                   ),
                   SignInButton(
                     Buttons.FacebookNew,
@@ -169,8 +172,7 @@ class _LoginState extends State<Login> {
 
   void loginn(context) async {
     try {
-      final response =
-          await Dio().post("https://api.escuelajs.co/api/v1/auth/login", data: {
+      final response = await Dio().post("lafyuu-e8e26.firebaseapp.com", data: {
         "email": _emailController.text,
         "password": _passwordController.text,
       });
